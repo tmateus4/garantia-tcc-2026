@@ -1,53 +1,75 @@
 \chapter{Introdução}\label{Introducao}
 
-Este documento serve de exemplo da utilização da classe IFG para escrever um texto cujo objetivo é apresentar os resultados de um trabalho científico. 
-Este modelo foi produzido a partir do modelo de monografia do \href{https://github.com/UnB-CIC/Monografia}{Departamento de Ciência da Computação da UnB}.
+O acompanhamento de garantias de produtos é uma atividade essencial no comércio varejista e nas assistências técnicas. A gestão de garantias compreende o monitoramento contínuo dos prazos legais, contratuais e estendidos estabelecidos para os produtos comercializados por uma organização. A precisão e a eficiência nesse controle impactam diretamente na qualidade do atendimento ao consumidor final.
 
-Na introdução, o autor deve apresentar os fatos e fatores que influenciam o contexto do trabalho.
-Em seguida, o autor deve mostrar seu problema nesse contexto em um último parágrafo.
-Os objetivos devem ser destacados em uma subseção.
-Citações são mais do que uma obrigação, são o reconhecimento e respeito pelo trabalho dos nossos colegas de ciência.
+Tradicionalmente, nas pequenas empresas, o controle de garantias ainda é conduzido de forma manual, muitas vezes restrito a anotações em planilhas, cadernos ou dependente da guarda física da nota fiscal por parte do cliente. O controle manual e descentralizado pode resultar em desafios significativos, como a falta de visibilidade sobre os prazos vigentes, lentidão no atendimento de clientes com produtos defeituosos e a incapacidade de identificar padrões de falha em determinados lotes ou fornecedores específicos. Diante desse cenário, a informatização do processo de acompanhamento de garantias emerge como uma solução indispensável para otimizar operações e maximizar o desempenho organizacional.
 
-Para citar assim:~\citep{Silva2018graph}, Escreva assim:
+A informatização do controle de garantias oferece uma série de vantagens, como agilidade na verificação de prazos, redução de erros de contagem de dias, maior confiabilidade dos registros e facilidade de acesso ao histórico do cliente. Isso não apenas agiliza o atendimento de devoluções, mas também facilita a detecção precoce de possíveis fornecedores com taxas de defeito acima do esperado, minimizando prejuízos operacionais.
 
-\begin{verbatim}
-~\citep{Silva2018graph}
-\end{verbatim}
+Atualmente, o mercado brasileiro oferece diferentes camadas de solução para esse problema, mas nenhuma delas atende de forma direta o recorte proposto neste trabalho. De um lado, Sistemas de Gestão Empresarial (ERPs) generalistas voltados ao varejo tratam a garantia, quando muito, como um recurso secundário, embutido em dezenas de outros módulos complexos, como controle de estoque, emissão fiscal e vendas multicanal, o que exige do pequeno empreendedor a contratação de um sistema muito mais amplo e custoso do que sua necessidade real. De outro lado, já existem sistemas de gestão voltados especificamente a assistências técnicas e lojistas de nicho, como AssistênciaPro, StoreBrasil e Andra ERP, que incluem o controle de garantia entre suas funcionalidades. Ainda assim, mesmo essas soluções mais próximas do público-alvo deste trabalho tratam a garantia como um módulo dentro de uma suíte maior, que engloba ordem de serviço, estoque, PDV, comissionamento e financeiro. Do lado do consumidor final, já existem aplicativos voltados ao armazenamento de notas fiscais e alertas de vencimento. Entretanto, não foi identificada uma ferramenta de baixa complexidade voltada especificamente ao lojista para o gerenciamento exclusivo de garantias, ou seja, dissociada da contratação de um sistema mais amplo de gestão comercial ou de ordens de serviço.
 
-Para citar assim:~\cite{Silva2018graph}, Escreva assim:
+Diante desse cenário, o projeto em questão propõe o desenvolvimento de um sistema web no modelo SaaS (Software as a Service) com arquitetura multiempresa (multi-tenant) dedicado exclusivamente ao controle de garantias de produtos. A ideia central é fornecer uma plataforma centralizada e de baixa complexidade, permitindo que diferentes pequenos negócios utilizem a mesma infraestrutura de forma isolada para cadastrar seus produtos, clientes e gerenciar o fluxo de acionamento de garantias. Ao contrário dos ERPs generalistas e dos sistemas de nicho voltados à gestão ampla de assistências técnicas, o sistema proposto não exige do usuário a adoção de módulos de estoque, PDV ou ordem de serviço que não sejam de seu interesse, concentrando-se exclusivamente na necessidade específica do controle de garantias.
 
-\begin{verbatim}
-~\cite{Silva2018graph}
-\end{verbatim}
+O objetivo geral deste trabalho é desenvolver um sistema para o controle de garantias em formato SaaS, proporcionando centralização das informações e automação do acompanhamento de prazos legais, contratuais e estendidos. Para alcançar esse objetivo, foram definidos os seguintes objetivos específicos:
+
+\begin{itemize}
+	\item Levantar requisitos funcionais e não funcionais com base na legislação e em sistemas semelhantes já existentes no mercado;
+	\item Modelar e implementar um banco de dados relacional com suporte à arquitetura multi-tenant, contemplando entidades como Empresa, Cliente, Produto, Venda e Garantia;
+	\item Implementar o cálculo automático dos prazos de garantia a partir da data de venda e do tipo de produto;
+	\item Desenvolver um módulo de abertura e acompanhamento de chamados de acionamento de garantia, com fluxo de status;
+	\item Implementar notificações de vencimento de garantia para a empresa;
+	\item Gerar relatórios gerenciais, incluindo indicadores de garantias por período e por fornecedor.
+\end{itemize}
+
+Este trabalho está estruturado da seguinte forma: no Referencial Teórico, são abordados os conceitos e estudos relacionados ao tema, como o Código de Defesa do Consumidor e arquiteturas SaaS. Em Métodos, são descritas as metodologias utilizadas para o desenvolvimento do sistema. O capítulo de Análise e Documentação apresenta os requisitos, a modelagem do banco de dados e das telas. Em Desenvolvimento, são detalhadas as etapas de implementação do sistema proposto. Por fim, a Conclusão discute os resultados obtidos por meio de testes com dados simulados, as contribuições do trabalho e sugestões para melhorias futuras.
+
+%%Este documento serve de exemplo da utilização da classe IFG para escrever um texto cujo objetivo é apresentar os resultados de um trabalho científico. 
+%%Este modelo foi produzido a partir do modelo de monografia do %%\href{https://github.com/UnB-CIC/Monografia}{Departamento de Ciência da Computação da UnB}.
+
+%%Na introdução, o autor deve apresentar os fatos e fatores que influenciam o contexto do %%trabalho.
+%%Em seguida, o autor deve mostrar seu problema nesse contexto em um último parágrafo.
+%%Os objetivos devem ser destacados em uma subseção.
+%%Citações são mais do que uma obrigação, são o reconhecimento e respeito pelo trabalho dos nossos colegas de ciência.
+
+%%Para citar assim:~\citep{Silva2018graph}, Escreva assim:
+
+%%\begin{verbatim}
+%%~\citep{Silva2018graph}
+%%\end{verbatim}
+
+%%Para citar assim:~\cite{Silva2018graph}, Escreva assim:
+
+%%\begin{verbatim}
+%%~\cite{Silva2018graph}
+%%\end{verbatim}
 
 
-\section*{Objetivo}
+%%\section*{Objetivo}
 
-Objetivos normalmente iniciam-se com verbos no infinitivo, por exemplo: 
+%%Objetivos normalmente iniciam-se com verbos no infinitivo, por exemplo: 
 
-Escrever um bom TCC.
+%%Escrever um bom TCC.
 
-\subsection*{Objetivos Específicos}
+%%\subsection*{Objetivos Específicos}
 
-\begin{enumerate}
-	\item Fazer AAAA
-	\item Implementar BBBB
-	\item Produzir CCCC
-\end{enumerate}
+%%\begin{enumerate}
+%%	\item Fazer AAAA
+%%	\item Implementar BBBB
+%%	\item Produzir CCCC
+%%\end{enumerate}
 
-Alguns cuidados devem ser tomados para melhorar a experiência do leitor.
-O primeiro deles é sempre usar referências cruzadas de siglas, capítulos e seções, figuras e tabelas.
-O nome a seguir: \acf{IFG}, é um exemplo de uso de siglas para ser usado na primeira citação.
-\ac{IFG} é apenas a sigla, após seu primeiro uso.
-Este é um exeplo de nota de rodapé\footnote{\url{https://www.capes.gov.br/images/stories/download/diversos/OrientacoesCapes_CombateAoPlagio.pdf}}.
+%%Alguns cuidados devem ser tomados para melhorar a experiência do leitor.
+%%O primeiro deles é sempre usar referências cruzadas de siglas, capítulos e seções, figuras e tabelas.
+%%O nome a seguir: \acf{IFG}, é um exemplo de uso de siglas para ser usado na primeira citação.
+%%\ac{IFG} é apenas a sigla, após seu primeiro uso.
+%%ste é um exeplo de nota de rodapé\footnote{\url{https://www.capes.gov.br/images/stories/download/diversos/OrientacoesCapes_CombateAoPlagio.pdf}}.
 
-\section{Descrição Dos Capítulos}
+%%\section{Descrição Dos Capítulos}
 
-A última parte da introdução é uma descrição do que o leitor encontrará em cada capítulo.
-Por exemplo, no \nameref{Referencial_Teorico} são apresentados comandos em \LaTeX e dicas para formatar seu TCC.
-No \nameref{Metodo} é descrito o método utilizado para alcançar os objetivos listados aqui.
-A \nameref{Analise} apresenta o resultado da Análise de Requisitos e os artefatos produzidos.
-O \nameref{Produto} apresenta os resultados obtidos e o produto criado.
-No \nameref{Conclusao}, são apresentadas as conclusões, contribuições científicas e trabalhos futuros.
-
+%%A última parte da introdução é uma descrição do que o leitor encontrará em cada capítulo.
+%%Por exemplo, no \nameref{Referencial_Teorico} são apresentados comandos em \LaTeX e dicas para formatar seu TCC.
+%%No \nameref{Metodo} é descrito o método utilizado para alcançar os objetivos listados aqui.
+%%A \nameref{Analise} apresenta o resultado da Análise de Requisitos e os artefatos produzidos.
+%%O \nameref{Produto} apresenta os resultados obtidos e o produto criado.
+%%No \nameref{Conclusao}, são apresentadas as conclusões, contribuições científicas e trabalhos futuros.
 
