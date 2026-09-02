@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.18)  18 AUG 2026 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.18)  2 SEP 2026 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,7 +1026,7 @@ Package hyperref Info: Link coloring ON on input line 145.
 \openout4 = `main.out'.
 
 Package babel Info: Main language set to 'portuguese'.
-<images/ifgvertical.png, id=59, 450.9648pt x 547.3248pt>
+<images/ifgvertical.png, id=71, 450.9648pt x 547.3248pt>
 File: images/ifgvertical.png Graphic file (type png)
 <use images/ifgvertical.png>
 Package pdftex.def Info: images/ifgvertical.png  used on input line 149.
@@ -1245,7 +1245,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (text/4_Analise.tex
 Cap\'{\i }tulo 4.
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1259,6 +1258,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
+Package babel Info: 'portuguese' activates 'portuges' shorthands.
+(babel)             Reported on input line 83.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[17])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[18]
 \openout2 = `text/5_Produto.aux'.
 
  (text/5_Produto.tex
@@ -1270,21 +1304,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15
+[19
 
 
 
 
 ]
-<img/scrum.PNG, id=177, 267.49937pt x 164.615pt>
+<img/scrum.PNG, id=211, 267.49937pt x 164.615pt>
 File: img/scrum.PNG Graphic file (type png)
 <use img/scrum.PNG>
 Package pdftex.def Info: img/scrum.PNG  used on input line 56.
 (pdftex.def)             Requested size: 455.24411pt x 280.18088pt.
 )
-Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported on input line 257.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1292,7 +1323,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[16 <./img/scrum.PNG>]
+[20 <./img/scrum.PNG>]
 \openout2 = `text/6_Conclusao.aux'.
 
  (text/6_Conclusao.tex
@@ -1305,16 +1336,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17
+[21
 
 
 
 
 ] (main.bbl
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
+.
 
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-)
+(C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+))
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1322,11 +1355,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18
+[22
 
 
 
-] [19
+] [23
 
 
 ]
@@ -1342,7 +1375,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20
+[24
 
 
 ]
@@ -1364,16 +1397,16 @@ L3 programming layer <2026-07-20>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A50C26DBBA4F54E1C8FDBAE311C87128;1935.
+(rerunfilecheck)             Checksum: 178FB2053287894CC3FF3AB4FAE65E66;2456.
  ) 
 Here is how much of TeX's memory you used:
- 23853 strings out of 467501
- 393903 string characters out of 5408550
- 959884 words of memory out of 5000000
- 52302 multiletter control sequences out of 15000+600000
- 699001 words of font info for 257 fonts, out of 8000000 for 9000
+ 23909 strings out of 467501
+ 394675 string characters out of 5408550
+ 959957 words of memory out of 5000000
+ 52330 multiletter control sequences out of 15000+600000
+ 699882 words of font info for 268 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,12n,85p,1438b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,13n,85p,1438b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\t_mat\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
 1095.pk><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msam10.pfb><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts/type1
@@ -1384,9 +1417,9 @@ type1/urw/times/utmbi8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmr8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmr8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (21 pages, 373674 bytes).
+Output written on main.pdf (25 pages, 385745 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 83067 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 85139 words of extra memory for PDF output out of 89155 (max. 10000000)
 

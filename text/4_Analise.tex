@@ -1,10 +1,188 @@
 \chapter{Análise e Artefatos}
 \label{Analise}
 
-Este capítulo deve mostrar o que você conseguiu alcançar após aplicar seu método em busca do seu Objetivo.
+%Este capítulo deve mostrar o que você conseguiu alcançar após aplicar seu método em busca do seu Objetivo.
 
-\section{O que devo escrever aqui?}
-Bem, quando você iniciou seu trabalho, você tinha um problema claro a resolver.
-Você pesquisou a respeito do seu problema e também a respeito de ferramentas, tecnologias e outros recursos que poderiam ajudá-lo a resolver seu problema. No método você estabelecu os passos usados para resolver o problema. Agora é hora de mostrar em detalhes que você alcançou os objetivos definidos na \nameref{Introducao}.
+%\section{O que devo escrever aqui?}
+%Bem, quando você iniciou seu trabalho, você tinha um problema claro a resolver.
+%Você pesquisou a respeito do seu problema e também a respeito de ferramentas, tecnologias e outros recursos que poderiam ajudá-lo a resolver seu problema. No método você estabelecu os passos usados para resolver o problema. Agora é hora de mostrar em detalhes que você alcançou os objetivos definidos na \nameref{Introducao}.
 
-Oriente-se pelos Objetivos. Descreva em detalhes o seu sucesso!!
+%Oriente-se pelos Objetivos. Descreva em detalhes o seu sucesso!!
+Este capítulo apresenta o processo de análise e especificação do sistema, contemplando a definição dos requisitos funcionais, não funcionais e das regras de negócio. Essa documentação estabelece a base técnica necessária para a compreensão do comportamento da aplicação, orientando a arquitetura e assegurando a consistência das etapas seguintes de desenvolvimento.
+
+\section{Levantamento de Requisitos}
+O levantamento de requisitos baseou-se no estudo das necessidades do negócio e dos problemas operacionais a serem solucionados. A partir dessa análise, foram especificados os requisitos funcionais, os requisitos não funcionais e as regras de negócio essenciais para o desenvolvimento do sistema.
+
+\subsection{Requisitos Funcionais}
+Os requisitos funcionais são identificados pela sigla RF seguida por numeração sequencial.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF01] Cadastrar empresa}
+
+O sistema deve permitir que um novo usuário realize o cadastro da sua empresa na plataforma, gerando automaticamente o primeiro usuário com perfil Administrador.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF02] Cadastrar usuários}
+
+O sistema deve permitir que o usuário Administrador registre novos usuários vinculados exclusivamente à sua empresa.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF03] Autenticar usuário}
+
+O sistema deve permitir que os usuários acessem a plataforma informando e-mail e senha de acesso.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF04] Recuperar senha}
+
+O sistema deve permitir a redefinição de credenciais de acesso por meio de um fluxo de recuperação de conta, acionado a partir do e-mail cadastrado.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF05] Manter clientes}
+
+O sistema deve permitir o cadastro, a consulta, a edição e a inativação de clientes da empresa. O cliente não deve ser excluído permanentemente, apenas inativado, em razão do relacionamento com o histórico de vendas e garantias.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF06] Manter produtos}
+
+O sistema deve permitir o cadastro, a consulta, a edição e a inativação de produtos, registrando seus respectivos prazos de garantia contratual oferecidos pelo fabricante.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF07] Pesquisar clientes}
+
+O sistema deve permitir a busca parametrizada de clientes por nome, CPF/CNPJ ou telefone.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF08] Registrar venda}
+
+O sistema deve permitir o registro de vendas, vinculando cliente, produto(s), valor, data e número da nota fiscal.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF09] Calcular prazos de garantia}
+
+O sistema deve calcular e persistir automaticamente, no ato da venda, as datas de vencimento das garantias legal e contratual para cada produto vendido, com base no tipo de produto e no prazo cadastrado.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF10] Registrar garantia estendida}
+
+O sistema deve permitir o registro da contratação de uma garantia estendida vinculada a uma venda existente, calculando seu prazo a partir do término da garantia contratual.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF11] Consultar histórico de vendas}
+
+O sistema deve permitir a filtragem e a visualização do histórico de vendas por cliente ou por produto.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF12] Exibir vigência de garantias}
+
+O sistema deve apresentar, para cada venda, os prazos de garantia legal, contratual e estendida, quando houver, e as respectivas datas exatas de vencimento.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF13] Notificar vencimento de garantias}
+
+O sistema deve emitir notificações sobre garantias que estejam próximas do término de vigência.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF14] Abrir solicitação de acionamento}
+
+O sistema deve permitir a abertura de um chamado de garantia vinculado diretamente ao registro de uma venda, com descrição do problema relatado.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF15] Gerenciar status do acionamento}
+
+O sistema deve permitir a atualização e o acompanhamento do ciclo de vida do acionamento de garantia, contemplando os estados aberta, em análise, aprovada, negada e concluída.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF16] Validar abertura de acionamento}
+
+O sistema deve bloquear a criação automática de solicitações fora da vigência das garantias.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF17] Consultar histórico de acionamentos}
+
+O sistema deve permitir a consulta do histórico de solicitações de garantia, filtradas por cliente ou por produto.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF18] Gerar relatório de incidência}
+
+O sistema deve emitir relatórios do índice de acionamento de garantia por produto e por fornecedor, permitindo identificar padrões de falha.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF19] Visualizar painel operacional}
+
+O sistema deve disponibilizar um painel (dashboard) exibindo as garantias que vencerão nos próximos dias.
+
+\subsection{Requisitos Não Funcionais}
+Os requisitos não funcionais são identificados pela sigla RNF seguida por numeração sequencial.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF01] Linguagem do sistema}
+
+O sistema deve ser desenvolvido em C\#, utilizando o framework ASP.NET Core no back-end, e em TypeScript, utilizando React e Vite no front-end.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF02] Banco de dados}
+
+O sistema deve utilizar o banco de dados relacional PostgreSQL.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF03] Isolamento de dados}
+
+O sistema deve assegurar a segregação lógica estrita dos dados entre diferentes empresas na camada de persistência.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF04] Responsividade de interface}
+
+A camada de apresentação deve se adaptar dinamicamente a diferentes resoluções, contemplando desktops, tablets e smartphones.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF05] Concorrência}
+
+A infraestrutura deve suportar múltiplos acessos simultâneos de diferentes empresas sem degradação perceptível de desempenho.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF06] Tolerância a falhas}
+
+Falhas ocorridas no ambiente ou na requisição de uma empresa específica não devem interromper o serviço para os demais tenants.
+
+\subsection{Regras de Negócio}
+As regras de negócio são identificadas pela sigla RN seguida por numeração sequencial.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN01] Prazos da garantia legal}
+
+A garantia legal tem prazo de 30 dias para produtos não duráveis e 90 dias para produtos duráveis.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN02] Garantia contratual}
+
+A garantia contratual é complementar à legal, sendo seu prazo estipulado pelo fabricante ou fornecedor no cadastro do produto.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN03] Contratação de garantia estendida}
+
+A garantia estendida só pode ser contratada se a venda possuir garantia legal e/ou contratual válida, iniciando sua vigência imediatamente após o término da garantia contratual.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN04] Validação temporal de acionamento}
+
+A abertura automática de uma solicitação de acionamento exige a vigência de ao menos um dos prazos legal, contratual ou estendida na data da solicitação.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN05] Gestão de usuários da empresa}
+
+Apenas o usuário com perfil Administrador possui permissão para cadastrar, editar ou remover usuários da própria empresa.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN06] Vínculos obrigatórios da venda}
+
+Toda venda registrada deve conter, obrigatoriamente, um cliente e ao menos um produto previamente cadastrados na mesma empresa.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN07] Imutabilidade de solicitações finalizadas}
+
+Uma solicitação de acionamento com status final, aprovada, negada ou concluída, não pode ser reaberta; ocorrências posteriores exigem a criação de uma nova solicitação.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN08] Agnosticismo de canal de venda}
+
+O controle de garantia independe do canal pelo qual a venda foi realizada, loja física ou virtual, aplicando-se os mesmos prazos e regras de acionamento em ambos os casos.
