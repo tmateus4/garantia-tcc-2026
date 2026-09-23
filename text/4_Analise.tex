@@ -160,7 +160,7 @@ A garantia contratual é complementar à legal, sendo seu prazo estipulado pelo 
 \vspace{\baselineskip}
 \noindent\textbf{[RN03] Contratação de garantia estendida}
 
-A garantia estendida só pode ser contratada se a venda possuir garantia legal e/ou contratual válida, iniciando sua vigência imediatamente após o término da garantia contratual.
+A garantia estendida só pode ser contratada se a venda possuir garantia legal e/ou contratual válida, iniciando sua vigência imediatamente após o término da garantia contratual ou, na ausência desta, da legal.
 
 \vspace{\baselineskip}
 \noindent\textbf{[RN04] Validação temporal de acionamento}
@@ -175,7 +175,7 @@ Apenas o usuário com perfil Administrador possui permissão para cadastrar, edi
 \vspace{\baselineskip}
 \noindent\textbf{[RN06] Vínculos obrigatórios da venda}
 
-Toda venda registrada deve conter, obrigatoriamente, um cliente e ao menos um produto previamente cadastrados na mesma empresa.
+Toda venda registrada deve conter, obrigatoriamente, um cliente e ao menos um produto previamente cadastrados e ativos na mesma empresa.
 
 \vspace{\baselineskip}
 \noindent\textbf{[RN07] Imutabilidade de solicitações finalizadas}
@@ -186,3 +186,367 @@ Uma solicitação de acionamento com status final, aprovada, negada ou concluíd
 \noindent\textbf{[RN08] Agnosticismo de canal de venda}
 
 O controle de garantia independe do canal pelo qual a venda foi realizada, loja física ou virtual, aplicando-se os mesmos prazos e regras de acionamento em ambos os casos.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN09] Unicidade de identificadores}
+
+O sistema deve garantir CNPJ único por empresa e e-mail único por usuário na base de dados.
+
+\section{Casos de Uso}
+
+Aqui está a figura desmotrando casos de uso do sistema:
+
+\begin{figure}[H]
+	\centering
+	\caption{Diagrama de Casos de Uso do Sistema}
+	\includegraphics[width=0.95\textwidth]{img/diagramacasos.png}
+	\label{fig:casos_de_uso}
+\end{figure}
+
+\section{Especificação de Casos de Uso}
+
+Aqui está o detalhamento dos Casos de Usos:
+
+\subsection{UC01 – Cadastrar Empresa}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC01 – Cadastrar Empresa}
+	\label{tab:uc01}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC01 - Cadastrar Empresa \\ \hline
+		\textbf{Atores} & Visitante (usuário não autenticado) \\ \hline
+		\textbf{Requisitos Associados} & RF01, RN09 \\ \hline
+		\textbf{Pré-condições} & O visitante não possui empresa cadastrada na plataforma. \\ \hline
+		\textbf{Pós-condições} & A empresa é criada e o primeiro usuário com perfil Administrador é provisionado. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O visitante acessa a tela de cadastro da plataforma. \newline
+		2. O sistema exibe o formulário solicitando dados da empresa (razão social, CNPJ) e do administrador (nome, e-mail, senha). \newline
+		3. O visitante preenche as informações e confirma o cadastro. \newline
+		4. O sistema valida os campos informados. \newline
+		5. O sistema persiste a empresa e cria a conta do administrador associada à empresa criada. \newline
+		6. O sistema informa o sucesso do cadastro e encerra o caso de uso. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Dados duplicados ou inválidos (Passo 4):} \newline
+		1. O sistema identifica que o CNPJ ou e-mail já existem, ou que os dados são inconsistentes. \newline
+		2. O sistema exibe mensagem de erro nos campos correspondentes. \newline
+		3. O visitante corrige os dados e submete novamente (retorna ao passo 3). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC02 – Autenticar Usuário}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC02 – Autenticar Usuário}
+	\label{tab:uc02}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC02 - Autenticar Usuário \\ \hline
+		\textbf{Atores} & Visitante, Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF03, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário previamente cadastrado e ativo em uma empresa. \\ \hline
+		\textbf{Pós-condições} & Sessão autenticada iniciada, contendo os perfis de acesso do usuário e o identificador do tenant da empresa. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O usuário acessa a página de login do sistema. \newline
+		2. O sistema apresenta os campos para inserção de e-mail e senha. \newline
+		3. O usuário preenche as credenciais e solicita a autenticação. \newline
+		4. O sistema valida as credenciais contra a base de dados. \newline
+		5. O sistema gera a sessão vinculando o perfil e o tenant ativo. \newline
+		6. O sistema redireciona o usuário para a página inicial correspondente ao seu perfil. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Credenciais Inválidas ou Conta Inativa (Passo 4):} \newline
+		1. O sistema verifica inconsistência no e-mail/senha ou identifica usuário inativo. \newline
+		2. O sistema emite mensagem erro e mantém o usuário na página de login (retorna ao passo 3). \newline
+		\textbf{FA02 – Recuperação de Senha, ponto de extensão (Passo 3):} \newline
+		1. O usuário seleciona a opção ``Esqueci minha senha''. \newline
+		2. O sistema invoca o Caso (Recuperar Senha). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC03 – Gerenciar Usuários da Empresa}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC03 – Gerenciar Usuários da Empresa}
+	\label{tab:uc03}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC03 - Gerenciar Usuários da Empresa \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF02, RN05, RN09, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado com perfil Administrador. \\ \hline
+		\textbf{Pós-condições} & Novo usuário criado, dados atualizados ou usuário inativado dentro do tenant da empresa. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O administrador acessa o módulo de gerenciamento de usuários. \newline
+		2. O sistema exibe a listagem de usuários vinculados exclusivamente à sua empresa. \newline
+		3. O administrador seleciona a opção de registrar novo usuário (ou editar usuário existente). \newline
+		4. O sistema apresenta o formulário com nome, e-mail, perfil de acesso (Administrador ou Operador) e senha inicial. \newline
+		5. O administrador preenche os dados e confirma o envio. \newline
+		6. O sistema valida os campos informados e garante a unicidade do e-mail na base de dados (RN09). \newline
+		7. O sistema persiste o registro atrelando o novo usuário ao identificador da empresa ativa (RNF03). \newline
+		8. O sistema emite mensagem de confirmação e atualiza a listagem. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – E-mail já cadastrado (Passo 6):} \newline
+		1. O sistema identifica duplicidade no e-mail informado (RN09). \newline
+		2. O sistema exibe alerta informando a indisponibilidade do e-mail. \newline
+		3. O administrador altera o e-mail ou cancela a operação (retorna ao passo 5). \newline
+		\textbf{FA02 – Inativação de Usuário (Passo 3):} \newline
+		1. O administrador seleciona um usuário existente e solicita a inativação de seu acesso. \newline
+		2. O sistema verifica se o usuário é o único Administrador ativo da empresa. \newline
+		3. Caso seja o único: o sistema bloqueia a operação e informa que a empresa deve manter ao menos um Administrador ativo (retorna ao passo 2). \newline
+		4. Caso não seja: o sistema atualiza o status do usuário selecionado para inativo e revoga suas sessões ativas, encerrando o caso de uso. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC04 – Manter Clientes}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC04 – Manter Clientes}
+	\label{tab:uc04}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC04 - Manter Clientes \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF05, RF07, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado na sessão da empresa. \\ \hline
+		\textbf{Pós-condições} & Registro de cliente criado, atualizado ou inativado na partição de dados do tenant. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador acessa o módulo de gestão de clientes. \newline
+		2. O sistema exibe a listagem de clientes vinculados à empresa, com opção de busca por nome, CPF/CNPJ ou telefone (RF07). \newline
+		3. O operador seleciona a opção de criar novo registro (ou editar registro existente). \newline
+		4. O sistema apresenta o formulário com campos de identificação (Nome/Razão Social, CPF/CNPJ, E-mail, Contato telefônico e Endereço). \newline
+		5. O operador preenche os campos solicitados e submete o formulário. \newline
+		6. O sistema valida os campos obrigatórios e a integridade de formato do documento (CPF/CNPJ). \newline
+		7. O sistema persiste as informações vinculando-as ao tenant corrente (RNF03). \newline
+		8. O sistema emite mensagem de sucesso e atualiza a listagem. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Documento Duplicado (Passo 6):} \newline
+		1. O sistema identifica que o CPF/CNPJ já se encontra cadastrado para outro cliente na mesma empresa. \newline
+		2. O sistema impede a gravação e apresenta mensagem de erro no campo do documento (retorna ao passo 5). \newline
+		\textbf{FA02 – Inativação de Cliente (Passo 3):} \newline
+		1. O operador localiza o cliente e solicita a inativação cadastral. \newline
+		2. O sistema atualiza o estado do cliente para inativo, impedindo novas vendas vinculadas a este registro, e encerra o caso de uso. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC05 – Manter Produtos}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC05 – Manter Produtos}
+	\label{tab:uc05}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC05 - Manter Produtos \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF06, RN01, RN02, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado na sessão da empresa. \\ \hline
+		\textbf{Pós-condições} & Registro de produto criado, atualizado ou inativado com as parametrizações de garantias associadas. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador acessa a listagem de produtos da empresa. \newline
+		2. O sistema exibe os produtos registrados com respectivos códigos, valores e prazos configurados. \newline
+		3. O operador clica na opção para adicionar novo produto (ou editar produto existente). \newline
+		4. O sistema exibe formulário solicitando nome, código/SKU, preço base, categoria, prazo padrão de garantia legal e prazo de garantia contratual do fabricante (RN01, RN02). \newline
+		5. O operador informa os parâmetros e aciona a opção de salvar. \newline
+		6. O sistema valida os dados obrigatórios e a unicidade do código/SKU para a empresa. \newline
+		7. O sistema persiste o produto e disponibiliza-o para seleção em vendas. \newline
+		8. O sistema apresenta mensagem de confirmação. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Código Identificador Duplicado (Passo 6):} \newline
+		1. O sistema acusa código SKU/identificador já utilizado em outro item da mesma empresa. \newline
+		2. O sistema cancela a persistência e exibe aviso de duplicidade em tela (retorna ao passo 5). \newline
+		\textbf{FA02 – Inativação de Produto (Passo 3):} \newline
+		1. O operador seleciona a opção de inativar produto do catálogo. \newline
+		2. O sistema altera o status do item para inativo, preservando o histórico de vendas anteriores intacto, e encerra o caso de uso. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC06 – Registrar Venda}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC06 – Registrar Venda}
+	\label{tab:uc06}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC06 - Registrar Venda \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF05, RF06, RF08, RF09, RF10, RN01, RN02, RN03, RN06 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado; ao menos um cliente e um produto ativos cadastrados na mesma empresa. \\ \hline
+		\textbf{Pós-condições} & Venda gravada e os prazos de garantia calculados e persistidos no banco de dados. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador acessa o módulo de vendas e solicita novo registro. \newline
+		2. O sistema exibe o formulário de venda. \newline
+		3. O operador seleciona o cliente, inclui um ou mais produtos, informa as quantidades, valores e o número da nota fiscal. \newline
+		4. O operador confirma a gravação da venda. \newline
+		5. O sistema valida os vínculos obrigatórios e a integridade dos dados (RN06). \newline
+		6. O sistema executa o cálculo automático dos prazos de garantia legal e contratual para cada item (RF09, RN01, RN02). \newline
+		7. O sistema persiste a venda e as vigências calculadas. \newline
+		8. O sistema exibe confirmação e apresenta o resumo com as datas de vencimento. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Inclusão de Garantia Estendida, ponto de extensão (Passo 3):} \newline
+		1. O operador marca a opção de garantia estendida para um item elegível. \newline
+		2. O sistema calcula a nova vigência somando o prazo estendido imediatamente após o fim da garantia contratual (RN03). \newline
+		3. O fluxo retorna ao passo 4. \newline
+		\textbf{FA02 – Cliente ou Produto Inativo (Passo 5):} \newline
+		1. O sistema identifica entidade inativada (RF05, RF06). \newline
+		2. O sistema bloqueia a transação e exibe alerta na tela (retorna ao passo 3). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC07 – Calcular Prazos de Garantia}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC07 – Calcular Prazos de Garantia}
+	\label{tab:uc07}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC07 - Calcular Prazos de Garantia \\ \hline
+		\textbf{Atores} & Sistema (caso de uso incluído por UC06) \\ \hline
+		\textbf{Requisitos Associados} & RF09, RN01, RN02, RN08 \\ \hline
+		\textbf{Pré-condições} & Data da venda informada e itens devidamente identificados com respectivas parametrizações de garantia. \\ \hline
+		\textbf{Pós-condições} & Datas precisas de término de vigência para cada modalidade calculadas em memória e devolvidas ao fluxo chamador. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O caso de uso é invocado automaticamente a partir do registro de venda (UC06). \newline
+		2. O sistema recolhe a data efetiva da emissão da venda/nota fiscal. \newline
+		3. O sistema obtém os prazos definidos de garantia legal e contratual atribuídos a cada item. \newline
+		4. O sistema calcula a data final da garantia legal somando o prazo legal à data da venda (RN01, RN08). \newline
+		5. O sistema estabelece o marco temporal da garantia contratual somando o prazo complementar (RN02). \newline
+		6. O sistema retorna os períodos calculados para consolidação da venda. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Ausência de Prazo Contratual Parametrizado (Passo 3):} \newline
+		1. O sistema verifica que o produto possui apenas garantia legal obrigatória. \newline
+		2. O sistema define a vigência da garantia contratual com prazo zero, consolidando o encerramento do suporte no termo final da garantia legal, e o fluxo principal prossegue no passo 4. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC08 – Abrir Solicitação de Garantia}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC08 – Abrir Solicitação de Garantia}
+	\label{tab:uc08}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC08 - Abrir Solicitação de Garantia \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF07, RF12, RF14, RF16, RN04 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado; existe ao menos uma venda registrada associada ao cliente. \\ \hline
+		\textbf{Pós-condições} & Chamado de garantia registrado no banco de dados com status inicial ``Aberta''. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador pesquisa a venda associada ao cliente por meio do nome, CPF/CNPJ ou número da nota fiscal (RF07). \newline
+		2. O sistema exibe os dados da venda, os produtos contidos e os prazos vigentes de garantia legal, contratual e estendida (RF12). \newline
+		3. O operador seleciona o item a ser acionado e clica na opção de abertura de chamado. \newline
+		4. O sistema executa a validação temporal de vigência das garantias (RN04). \newline
+		5. O sistema valida que ao menos uma das garantias está dentro do prazo na data da solicitação e apresenta o formulário de abertura. \newline
+		6. O operador preenche o relato do defeito apresentado e anexa observações pertinentes. \newline
+		7. O operador submete a solicitação. \newline
+		8. O sistema cria o chamado vinculado à venda com status ``Aberta'', gera o número de protocolo e exibe confirmação em tela. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Garantia Expirada (Passo 4):} \newline
+		1. O sistema verifica que todos os prazos (legal, contratual e estendida) para o produto selecionado já expiraram. \newline
+		2. O sistema bloqueia a criação da solicitação conforme RF16 e RN04. \newline
+		3. O sistema emite mensagem informativa indicando o término da vigência e encerra a tentativa. \newline
+		\textbf{FA02 – Venda Não Localizada (Passo 1):} \newline
+		1. O sistema não encontra nenhuma venda correspondente aos critérios informados. \newline
+		2. O sistema exibe mensagem informando a ausência de resultados e mantém o operador na tela de pesquisa (retorna ao passo 1). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC09 – Gerenciar Status do Acionamento}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC09 – Gerenciar Status do Acionamento}
+	\label{tab:uc09}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC09 - Gerenciar Status do Acionamento \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF15, RN07 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado; existência de uma solicitação de garantia previamente aberta. \\ \hline
+		\textbf{Pós-condições} & Status do chamado atualizado e histórico de transições persistido no banco de dados. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador consulta as solicitações de garantia pelo módulo de chamados. \newline
+		2. O sistema exibe a lista de acionamentos filtrados por status, cliente ou produto. \newline
+		3. O operador seleciona um chamado e visualiza seus detalhes e histórico de apontamentos. \newline
+		4. O operador seleciona a opção de alterar status. \newline
+		5. O sistema exibe as transições permitidas com base no ciclo de vida (Aberta $\rightarrow$ Em Análise $\rightarrow$ Aprovada / Negada / Concluída). \newline
+		6. O operador seleciona o novo status, insere parecer técnico ou justificativa da decisão e confirma. \newline
+		7. O sistema persiste a alteração e atualiza a data/hora do apontamento. \newline
+		8. O sistema apresenta notificação de atualização realizada com sucesso. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Tentativa de Alteração em Chamado Finalizado (Passo 5):} \newline
+		1. O operador seleciona um chamado com status final (``Aprovada'', ``Negada'' ou ``Concluída''). \newline
+		2. Ao calcular as transições permitidas, o sistema identifica que o chamado está sujeito à regra de imutabilidade (RN07). \newline
+		3. O sistema bloqueia as opções de edição de status e informa que a solicitação não pode ser reaberta, exigindo criação de nova ocorrência se necessário, encerrando a tentativa. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC10 – Consultar Histórico e Relatórios}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC10 – Consultar Histórico e Relatórios}
+	\label{tab:uc10}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC10 - Consultar Histórico e Relatórios \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF11, RF17, RF18, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado no sistema. \\ \hline
+		\textbf{Pós-condições} & Relatórios analíticos e auditoria de garantias gerados e visualizados na tela. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador acessa o menu de relatórios do sistema. \newline
+		2. O sistema exibe as opções de consulta disponíveis (Vendas com garantias a expirar, Volume de acionamentos e Taxa de defeitos por produto). \newline
+		3. O operador seleciona os filtros desejados (intervalo de datas, produto, estado do chamado ou cliente). \newline
+		4. O operador aciona a opção de gerar consulta. \newline
+		5. O sistema processa os filtros assegurando o isolamento de dados restrito à empresa (RNF03). \newline
+		6. O sistema renderiza em tela a tabela com os resultados e resumos quantitativos. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Consulta sem Resultados (Passo 5):} \newline
+		1. O sistema verifica que não existem registros que satisfaçam os filtros informados. \newline
+		2. O sistema exibe mensagem informativa de ausência de dados para o intervalo selecionado (retorna ao passo 3). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC11 – Visualizar Painel Operacional}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC11 – Visualizar Painel Operacional}
+	\label{tab:uc11}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC11 - Visualizar Painel Operacional \\ \hline
+		\textbf{Atores} & Operador, Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF19, RNF03, RNF06 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado no sistema. \\ \hline
+		\textbf{Pós-condições} & Métricas consolidadas em tempo real apresentadas ao usuário. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O operador clica na opção do painel operacional (\textit{dashboard}). \newline
+		2. O sistema recupera a chave de partição da empresa da sessão autenticada (RNF03). \newline
+		3. O sistema efetua a agregação em tempo real dos seguintes indicadores: total de chamados abertos, garantias a expirar nos próximos 30 dias e taxa de aprovação de acionamentos. \newline
+		4. O sistema renderiza os cartões de indicadores e os gráficos de acompanhamento diário. \newline
+		5. O operador analisa os dados consolidados e pode interagir com os cartões para acessar diretamente as listagens detalhadas. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Falha de Atualização das Métricas (Passo 3):} \newline
+		1. Ocorre uma falha temporária de comunicação ou indexação das métricas (RNF06). \newline
+		2. O sistema apresenta os dados em cache com indicação do último momento de sincronização e botão para forçar recarregamento, que reinicia o fluxo no passo 3. \\ \hline
+	\end{tabular}
+\end{table}
+
+\section{Diagrama de Atividades}
+
+Aqui está o diagrama de atividades
+
+\begin{figure}[H]
+	\centering
+	\caption{Diagrama de Atividades do Fluxo de Registro de Venda (UC06)}
+	\includegraphics[width=0.85\textwidth]{img/diagramaatividade.png}
+	\label{fig:diagrama_atividade}
+\end{figure}
