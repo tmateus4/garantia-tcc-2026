@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.16)  23 SEP 2026 16:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.16)  21 OCT 2026 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,8 +889,32 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 Package babel Info: 'portuguese' activates 'portuges' shorthands.
 (babel)             Reported on input line 10.
  (text/1_Introducao.aux) (text/2_Referencial_Teorico.aux)
-(text/3_Metodo.aux) (text/4_Analise.aux) (text/5_Produto.aux)
-(text/6_Conclusao.aux) (appendix/apendice.aux))
+(text/3_Metodo.aux) (text/4_Analise.aux
+
+LaTeX Warning: Label `tab:uc12' multiply defined.
+
+
+LaTeX Warning: Label `tab:uc13' multiply defined.
+
+
+LaTeX Warning: Label `tab:uc14' multiply defined.
+
+
+LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
+
+
+LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
+
+
+LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
+
+
+LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
+
+
+LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
+
+) (text/5_Produto.aux) (text/6_Conclusao.aux) (appendix/apendice.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
@@ -1026,7 +1050,7 @@ Package hyperref Info: Link coloring ON on input line 145.
 \openout4 = `main.out'.
 
 Package babel Info: Main language set to 'portuguese'.
-<images/ifgvertical.png, id=127, 450.9648pt x 547.3248pt>
+<images/ifgvertical.png, id=159, 450.9648pt x 547.3248pt>
 File: images/ifgvertical.png Graphic file (type png)
 <use images/ifgvertical.png>
 Package pdftex.def Info: images/ifgvertical.png  used on input line 149.
@@ -1143,21 +1167,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--211
 
 ] (text/acronyms.tex) [7
 
-] (main.toc)
+] (main.toc [8
+
+])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [8
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.73112pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.73112pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
-
-[9]
+ [9]
 \openout2 = `text/1_Introducao.aux'.
 
  (text/1_Introducao.tex
@@ -1293,12 +1309,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [18]
-<img/diagramacasos.png, id=294, 820.06375pt x 975.645pt>
-File: img/diagramacasos.png Graphic file (type png)
-<use img/diagramacasos.png>
-Package pdftex.def Info: img/diagramacasos.png  used on input line 202.
-(pdftex.def)             Requested size: 432.48051pt x 514.5437pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1307,6 +1317,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [19]
+<img/diagramacasos.png, id=362, 588.2778pt x 919.2744pt>
+File: img/diagramacasos.png Graphic file (type png)
+<use img/diagramacasos.png>
+Package pdftex.def Info: img/diagramacasos.png  used on input line 248.
+(pdftex.def)             Requested size: 432.48051pt x 675.83391pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1314,7 +1330,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[20 <./img/diagramacasos.png>]
+[20]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1322,7 +1338,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[21]
+[21 <./img/diagramacasos.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1387,6 +1403,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [29]
+Overfull \vbox (39.92218pt too high) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1395,12 +1414,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [30]
-<img/diagramaatividade.png, id=347, 449.0376pt x 564.6696pt>
-File: img/diagramaatividade.png Graphic file (type png)
-<use img/diagramaatividade.png>
-Package pdftex.def Info: img/diagramaatividade.png  used on input line 550.
-(pdftex.def)             Requested size: 386.96027pt x 486.60585pt.
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1416,7 +1429,137 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[32 <./img/diagramaatividade.png>]
+[32]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[33]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[34]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[36]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[38]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[39]
+<img/diagramaatividade.png, id=448, 449.0376pt x 564.6696pt>
+File: img/diagramaatividade.png Graphic file (type png)
+<use img/diagramaatividade.png>
+Package pdftex.def Info: img/diagramaatividade.png  used on input line 796.
+(pdftex.def)             Requested size: 432.48051pt x 543.85158pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[40]
+<img/Dashboard.png, id=453, 2409.0pt x 1043.9pt>
+File: img/Dashboard.png Graphic file (type png)
+<use img/Dashboard.png>
+Package pdftex.def Info: img/Dashboard.png  used on input line 811.
+(pdftex.def)             Requested size: 455.24411pt x 197.2599pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[41 <./img/diagramaatividade.png>]
+<img/Clientes.png, id=459, 2409.0pt x 1365.1pt>
+File: img/Clientes.png Graphic file (type png)
+<use img/Clientes.png>
+Package pdftex.def Info: img/Clientes.png  used on input line 821.
+(pdftex.def)             Requested size: 455.24411pt x 257.95528pt.
+<img/Produtos.png, id=460, 2409.0pt x 1365.1pt>
+File: img/Produtos.png Graphic file (type png)
+<use img/Produtos.png>
+Package pdftex.def Info: img/Produtos.png  used on input line 831.
+(pdftex.def)             Requested size: 455.24411pt x 257.95528pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[42 <./img/Dashboard.png> <./img/Clientes.png>]
+<img/Acionamentos.png, id=468, 2409.0pt x 1405.25pt>
+File: img/Acionamentos.png Graphic file (type png)
+<use img/Acionamentos.png>
+Package pdftex.def Info: img/Acionamentos.png  used on input line 841.
+(pdftex.def)             Requested size: 455.24411pt x 265.54219pt.
+<img/Usuários.png, id=469, 2409.0pt x 1043.9pt>
+File: img/Usuários.png Graphic file (type png)
+<use img/Usuários.png>
+Package pdftex.def Info: img/Usuários.png  used on input line 851.
+(pdftex.def)             Requested size: 455.24411pt x 197.2599pt.
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[43 <./img/Produtos.png> <./img/Acionamentos.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[44 <./img/Usuários.png>]
 \openout2 = `text/5_Produto.aux'.
 
  (text/5_Produto.tex
@@ -1428,13 +1571,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33
+[45
 
 
 
 
 ]
-<img/scrum.PNG, id=370, 267.49937pt x 164.615pt>
+<img/scrum.PNG, id=494, 267.49937pt x 164.615pt>
 File: img/scrum.PNG Graphic file (type png)
 <use img/scrum.PNG>
 Package pdftex.def Info: img/scrum.PNG  used on input line 56.
@@ -1447,7 +1590,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[34 <./img/scrum.PNG>]
+[46 <./img/scrum.PNG>]
 \openout2 = `text/6_Conclusao.aux'.
 
  (text/6_Conclusao.tex
@@ -1460,7 +1603,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35
+[47
 
 
 
@@ -1479,11 +1622,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36
+[48
 
 
 
-] [37
+] [49
 
 
 ]
@@ -1499,7 +1642,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38
+[50
 
 
 ]
@@ -1520,17 +1663,20 @@ L3 programming layer <2026-08-10>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1DA1A8A3DA3D5040EAE7D1A38F39B8E0;5505.
+(rerunfilecheck)             Checksum: FE2342E7267B1DA15E97E8ED9273D2E1;7557.
  ) 
 Here is how much of TeX's memory you used:
- 24197 strings out of 467441
- 402721 string characters out of 5407591
- 966639 words of memory out of 5000000
- 52611 multiletter control sequences out of 15000+600000
- 701671 words of font info for 287 fonts, out of 8000000 for 9000
+ 24285 strings out of 467441
+ 404241 string characters out of 5407591
+ 968091 words of memory out of 5000000
+ 52658 multiletter control sequences out of 15000+600000
+ 702061 words of font info for 293 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,13n,85p,1438b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,13n,85p,1438b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\t_mat\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
 1095.pk><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -1542,9 +1688,9 @@ eX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (39 pages, 632586 bytes).
+Output written on main.pdf (51 pages, 1452091 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 85261 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 124 named destinations out of 1000 (max. 500000)
+ 85350 words of extra memory for PDF output out of 89155 (max. 10000000)
 

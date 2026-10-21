@@ -3,18 +3,25 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Especificação do Caso de Uso UC01 – Cadastrar Empresa}}{21}{table.caption.8}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Especificação do Caso de Uso UC02 – Autenticar Usuário}}{22}{table.caption.9}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Especificação do Caso de Uso UC03 – Gerenciar Usuários da Empresa}}{23}{table.caption.10}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Especificação do Caso de Uso UC04 – Manter Clientes}}{24}{table.caption.11}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Especificação do Caso de Uso UC05 – Manter Produtos}}{25}{table.caption.12}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Especificação do Caso de Uso UC06 – Registrar Venda}}{26}{table.caption.13}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Especificação do Caso de Uso UC07 – Calcular Prazos de Garantia}}{27}{table.caption.14}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Especificação do Caso de Uso UC08 – Abrir Solicitação de Garantia}}{28}{table.caption.15}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Especificação do Caso de Uso UC09 – Gerenciar Status do Acionamento}}{29}{table.caption.16}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces Especificação do Caso de Uso UC10 – Consultar Histórico e Relatórios}}{30}{table.caption.17}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Especificação do Caso de Uso UC11 – Visualizar Painel Operacional}}{31}{table.caption.18}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Especificação do Caso de Uso UC01 – Cadastrar Empresa}}{22}{table.caption.8}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Especificação do Caso de Uso UC02 – Autenticar Usuário}}{23}{table.caption.9}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Especificação do Caso de Uso UC03 – Gerenciar Usuários da Empresa}}{24}{table.caption.10}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Especificação do Caso de Uso UC04 – Manter Clientes}}{25}{table.caption.11}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Especificação do Caso de Uso UC05 – Manter Produtos}}{26}{table.caption.12}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Especificação do Caso de Uso UC06 – Registrar Venda}}{27}{table.caption.13}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Especificação do Caso de Uso UC07 – Calcular Prazos de Garantia}}{28}{table.caption.14}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Especificação do Caso de Uso UC08 – Abrir Solicitação de Garantia}}{30}{table.caption.15}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Especificação do Caso de Uso UC09 – Gerenciar Status do Acionamento}}{31}{table.caption.16}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Especificação do Caso de Uso UC10 – Consultar Histórico e Relatórios}}{32}{table.caption.17}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Especificação do Caso de Uso UC11 – Visualizar Painel Operacional}}{33}{table.caption.18}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Especificação do Caso de Uso UC12 – Configurar Integração WhatsApp}}{34}{table.caption.19}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces Especificação do Caso de Uso UC13 – Enviar Notificação via WhatsApp}}{35}{table.caption.20}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Especificação do Caso de Uso UC14 – Acompanhar Solicitação de Garantia}}{36}{table.caption.21}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Especificação do Caso de Uso UC12 – Configurar Integração WhatsApp}}{37}{table.caption.22}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces Especificação do Caso de Uso UC13 – Enviar Notificação via WhatsApp}}{38}{table.caption.23}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces Especificação do Caso de Uso UC14 – Interagir com Bot de Autoatendimento}}{39}{table.caption.24}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces Especificação do Caso de Uso UC15 – Acionar Garantia via WhatsApp}}{40}{table.caption.25}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Exemplo de longtable}}{34}{table.5.1}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Exemplo de longtable}}{46}{table.5.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

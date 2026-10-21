@@ -7,26 +7,34 @@
 \contentsline {chapter}{\numberline {4}Análise e Artefatos}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Levantamento de Requisitos}{15}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Requisitos Funcionais}{15}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Requisitos Não Funcionais}{17}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Regras de Negócio}{18}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Casos de Uso}{19}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Especificação de Casos de Uso}{20}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}UC01 – Cadastrar Empresa}{21}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}UC02 – Autenticar Usuário}{22}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}UC03 – Gerenciar Usuários da Empresa}{23}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}UC04 – Manter Clientes}{24}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}UC05 – Manter Produtos}{25}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}UC06 – Registrar Venda}{26}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}UC07 – Calcular Prazos de Garantia}{27}{subsection.4.3.7}%
-\contentsline {subsection}{\numberline {4.3.8}UC08 – Abrir Solicitação de Garantia}{28}{subsection.4.3.8}%
-\contentsline {subsection}{\numberline {4.3.9}UC09 – Gerenciar Status do Acionamento}{29}{subsection.4.3.9}%
-\contentsline {subsection}{\numberline {4.3.10}UC10 – Consultar Histórico e Relatórios}{30}{subsection.4.3.10}%
-\contentsline {subsection}{\numberline {4.3.11}UC11 – Visualizar Painel Operacional}{31}{subsection.4.3.11}%
-\contentsline {section}{\numberline {4.4}Diagrama de Atividades}{31}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Desenvolvimento e Produto}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}O que devo escrever aqui?}{33}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusão}{35}{chapter.6}%
-\contentsline {chapter}{Referências}{36}{chapter*.21}%
-\contentsline {chapter}{Apêndice}{37}{section*.22}%
-\contentsline {chapter}{\numberline {A}Título do Apêndice}{38}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Seção I}{38}{appendix.A.1}%
+\contentsline {subsection}{\numberline {4.1.2}Requisitos Não Funcionais}{18}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Regras de Negócio}{19}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Casos de Uso}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Especificação de Casos de Uso}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}UC01 – Cadastrar Empresa}{22}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}UC02 – Autenticar Usuário}{23}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}UC03 – Gerenciar Usuários da Empresa}{24}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}UC04 – Manter Clientes}{25}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}UC05 – Manter Produtos}{26}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}UC06 – Registrar Venda}{27}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}UC07 – Calcular Prazos de Garantia}{28}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}UC08 – Abrir Solicitação de Garantia}{30}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}UC09 – Gerenciar Status do Acionamento}{31}{subsection.4.3.9}%
+\contentsline {subsection}{\numberline {4.3.10}UC10 – Consultar Histórico e Relatórios}{32}{subsection.4.3.10}%
+\contentsline {subsection}{\numberline {4.3.11}UC11 – Visualizar Painel Operacional}{33}{subsection.4.3.11}%
+\contentsline {subsection}{\numberline {4.3.12}UC12 – Configurar Integração WhatsApp}{34}{subsection.4.3.12}%
+\contentsline {subsection}{\numberline {4.3.13}UC13 – Enviar Notificação via WhatsApp}{35}{subsection.4.3.13}%
+\contentsline {subsection}{\numberline {4.3.14}UC14 – Acompanhar Solicitação de Garantia}{36}{subsection.4.3.14}%
+\contentsline {subsection}{\numberline {4.3.15}UC12 – Configurar Integração WhatsApp}{37}{subsection.4.3.15}%
+\contentsline {subsection}{\numberline {4.3.16}UC13 – Enviar Notificação via WhatsApp}{38}{subsection.4.3.16}%
+\contentsline {subsection}{\numberline {4.3.17}UC14 – Interagir com Bot de Autoatendimento}{39}{subsection.4.3.17}%
+\contentsline {subsection}{\numberline {4.3.18}UC15 – Acionar Garantia via WhatsApp}{40}{subsection.4.3.18}%
+\contentsline {section}{\numberline {4.4}Diagrama de Atividades}{40}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Protótipos}{41}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Desenvolvimento e Produto}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}O que devo escrever aqui?}{45}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusão}{47}{chapter.6}%
+\contentsline {chapter}{Referências}{48}{chapter*.33}%
+\contentsline {chapter}{Apêndice}{49}{section*.34}%
+\contentsline {chapter}{\numberline {A}Título do Apêndice}{50}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Seção I}{50}{appendix.A.1}%

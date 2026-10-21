@@ -111,6 +111,31 @@ O sistema deve emitir relatórios do índice de acionamento de garantia por prod
 
 O sistema deve disponibilizar um painel (dashboard) exibindo as garantias que vencerão nos próximos dias.
 
+\vspace{\baselineskip}
+\noindent\textbf{[RF20] Configurar integração com API de WhatsApp}
+
+O sistema deve permitir que o usuário Administrador configure as credenciais e os parâmetros necessários para a integração com a API do WhatsApp.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF21] Enviar notificações ativas via WhatsApp}
+
+O sistema deve disparar notificações automáticas via WhatsApp ao cliente final alertando sobre a proximidade do vencimento de garantias e a cada mudança de status de um acionamento em andamento.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF22] Disponibilizar autoatendimento via bot no WhatsApp}
+
+O sistema deve processar mensagens recebidas via WhatsApp e apresentar um menu interativo de opções ao cliente final, contemplando: abertura de solicitação de garantia, consulta de status de processo e solicitação de atendimento humano.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF23] Abrir solicitação de garantia via WhatsApp}
+
+O sistema deve permitir que o cliente final acione a garantia diretamente pelo fluxo conversacional do WhatsApp, identificando seu cadastro pelo CPF/CNPJ ou número de telefone, selecionando o produto com garantia vigente e enviando o relato do defeito.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RF24] Consultar status e solicitar atendente via WhatsApp}
+
+O sistema deve permitir que o cliente final consulte em tempo real a etapa atual de seus chamados por meio do protocolo ou CPF/CNPJ e solicite o transbordo da conversa para contato com um operador da empresa.
+
 \subsection{Requisitos Não Funcionais}
 Os requisitos não funcionais são identificados pela sigla RNF seguida por numeração sequencial.
 
@@ -143,6 +168,16 @@ A infraestrutura deve suportar múltiplos acessos simultâneos de diferentes emp
 \noindent\textbf{[RNF06] Tolerância a falhas}
 
 Falhas ocorridas no ambiente ou na requisição de uma empresa específica não devem interromper o serviço para os demais tenants.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF07] Processamento assíncrono de mensageria}
+
+O envio de notificações e o processamento de webhooks recebidos da API do WhatsApp devem ocorrer de forma assíncrona, evitando bloqueios nas operações internas da plataforma.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RNF08] Controle de estado de sessão conversacional}
+
+O sistema deve gerenciar o contexto e o estado da conversa de cada cliente no bot com tempo de expiração configurado, garantindo a continuidade do fluxo entre as mensagens trocadas.
 
 \subsection{Regras de Negócio}
 As regras de negócio são identificadas pela sigla RN seguida por numeração sequencial.
@@ -191,6 +226,17 @@ O controle de garantia independe do canal pelo qual a venda foi realizada, loja 
 \noindent\textbf{[RN09] Unicidade de identificadores}
 
 O sistema deve garantir CNPJ único por empresa e e-mail único por usuário na base de dados.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN10] Obrigatoriedade de contato telefônico}
+
+O envio de notificações via WhatsApp exige a presença de um número de telefone com DDD válido no cadastro do cliente.
+
+\vspace{\baselineskip}
+\noindent\textbf{[RN11] Prevenção de avisos de vencimento duplicados}
+
+Cada aviso de vencimento de garantia deve ser disparado uma única vez por regra de antecedência para cada produto vendido, evitando envios duplicados ao mesmo consumidor.
+
 
 \section{Casos de Uso}
 
@@ -310,7 +356,7 @@ Aqui está o detalhamento dos Casos de Usos:
 		\hline
 		\textbf{Nome} & UC04 - Manter Clientes \\ \hline
 		\textbf{Atores} & Operador, Administrador \\ \hline
-		\textbf{Requisitos Associados} & RF05, RF07, RNF03 \\ \hline
+		\textbf{Requisitos Associados} & RF05, RF07, RNF03, RN10 \\ \hline
 		\textbf{Pré-condições} & Usuário autenticado na sessão da empresa. \\ \hline
 		\textbf{Pós-condições} & Registro de cliente criado, atualizado ou inativado na partição de dados do tenant. \\ \hline
 		\textbf{Fluxo Principal} & 
@@ -319,7 +365,7 @@ Aqui está o detalhamento dos Casos de Usos:
 		3. O operador seleciona a opção de criar novo registro (ou editar registro existente). \newline
 		4. O sistema apresenta o formulário com campos de identificação (Nome/Razão Social, CPF/CNPJ, E-mail, Contato telefônico e Endereço). \newline
 		5. O operador preenche os campos solicitados e submete o formulário. \newline
-		6. O sistema valida os campos obrigatórios e a integridade de formato do documento (CPF/CNPJ). \newline
+		6. O sistema valida os campos obrigatórios, o formato do documento (CPF/CNPJ) e a presença de telefone válido com DDD (RN10). \newline
 		7. O sistema persiste as informações vinculando-as ao tenant corrente (RNF03). \newline
 		8. O sistema emite mensagem de sucesso e atualiza a listagem. \\ \hline
 		\textbf{Fluxos Alternativos} & 
@@ -434,26 +480,27 @@ Aqui está o detalhamento dos Casos de Usos:
 		\hline
 		\textbf{Nome} & UC08 - Abrir Solicitação de Garantia \\ \hline
 		\textbf{Atores} & Operador, Administrador \\ \hline
-		\textbf{Requisitos Associados} & RF07, RF12, RF14, RF16, RN04 \\ \hline
-		\textbf{Pré-condições} & Usuário autenticado; existe ao menos uma venda registrada associada ao cliente. \\ \hline
-		\textbf{Pós-condições} & Chamado de garantia registrado no banco de dados com status inicial ``Aberta''. \\ \hline
-		\textbf{Fluxo Principal} & 
-		1. O operador pesquisa a venda associada ao cliente por meio do nome, CPF/CNPJ ou número da nota fiscal (RF07). \newline
-		2. O sistema exibe os dados da venda, os produtos contidos e os prazos vigentes de garantia legal, contratual e estendida (RF12). \newline
-		3. O operador seleciona o item a ser acionado e clica na opção de abertura de chamado. \newline
-		4. O sistema executa a validação temporal de vigência das garantias (RN04). \newline
-		5. O sistema valida que ao menos uma das garantias está dentro do prazo na data da solicitação e apresenta o formulário de abertura. \newline
-		6. O operador preenche o relato do defeito apresentado e anexa observações pertinentes. \newline
-		7. O operador submete a solicitação. \newline
-		8. O sistema cria o chamado vinculado à venda com status ``Aberta'', gera o número de protocolo e exibe confirmação em tela. \\ \hline
-		\textbf{Fluxos Alternativos} & 
-		\textbf{FA01 – Garantia Expirada (Passo 4):} \newline
-		1. O sistema verifica que todos os prazos (legal, contratual e estendida) para o produto selecionado já expiraram. \newline
-		2. O sistema bloqueia a criação da solicitação conforme RF16 e RN04. \newline
-		3. O sistema emite mensagem informativa indicando o término da vigência e encerra a tentativa. \newline
-		\textbf{FA02 – Venda Não Localizada (Passo 1):} \newline
-		1. O sistema não encontra nenhuma venda correspondente aos critérios informados. \newline
-		2. O sistema exibe mensagem informando a ausência de resultados e mantém o operador na tela de pesquisa (retorna ao passo 1). \\ \hline
+		\textbf{Requisitos Associados} & RF07, RF12, RF14, RF16, RF21, RNF07, RN04 \\ \hline
+	\textbf{Pré-condições} & Usuário autenticado; existe ao menos uma venda registrada associada ao cliente. \\ \hline
+	\textbf{Pós-condições} & Chamado de garantia registrado no banco de dados com status inicial ``Aberta'' e notificação de abertura enviada ao cliente. \\ \hline
+	\textbf{Fluxo Principal} & 
+	1. O operador pesquisa a venda associada ao cliente por meio do nome, CPF/CNPJ ou número da nota fiscal (RF07). \newline
+	2. O sistema exibe os dados da venda, os produtos contidos e os prazos vigentes de garantia legal, contratual e estendida (RF12). \newline
+	3. O operador seleciona o item a ser acionado e clica na opção de abertura de chamado. \newline
+	4. O sistema executa a validação temporal de vigência das garantias (RN04). \newline
+	5. O sistema valida que ao menos uma das garantias está dentro do prazo na data da solicitação e apresenta o formulário de abertura. \newline
+	6. O operador preenche o relato do defeito apresentado e anexa observações pertinentes. \newline
+	7. O operador submete a solicitação (RF14). \newline
+	8. O sistema cria o chamado vinculado à venda com status ``Aberta'' e gera o número de protocolo. \newline
+	9. O sistema executa o caso de uso incluído UC13 (Enviar Notificação via WhatsApp) de forma assíncrona (RF21, RNF07) e exibe confirmação em tela. \\ \hline
+	\textbf{Fluxos Alternativos} & 
+	\textbf{FA01 – Garantia Expirada (Passo 4):} \newline
+	1. O sistema verifica que todos os prazos (legal, contratual e estendida) para o produto selecionado já expiraram. \newline
+	2. O sistema bloqueia a criação da solicitação conforme RF16 e RN04. \newline
+	3. O sistema emite mensagem informativa indicando o término da vigência e encerra a tentativa. \newline
+	\textbf{FA02 – Venda Não Localizada (Passo 1):} \newline
+	1. O sistema não encontra nenhuma venda correspondente aos critérios informados. \newline
+	2. O sistema exibe mensagem informando a ausência de resultados e mantém o operador na tela de pesquisa (retorna ao passo 1). \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -467,18 +514,18 @@ Aqui está o detalhamento dos Casos de Usos:
 		\hline
 		\textbf{Nome} & UC09 - Gerenciar Status do Acionamento \\ \hline
 		\textbf{Atores} & Operador, Administrador \\ \hline
-		\textbf{Requisitos Associados} & RF15, RN07 \\ \hline
+		\textbf{Requisitos Associados} & RF15, RF21, RNF07, RN07 \\ \hline
 		\textbf{Pré-condições} & Usuário autenticado; existência de uma solicitação de garantia previamente aberta. \\ \hline
-		\textbf{Pós-condições} & Status do chamado atualizado e histórico de transições persistido no banco de dados. \\ \hline
+		\textbf{Pós-condições} & Status do chamado atualizado, histórico persistido e notificação de transição enviada ao cliente. \\ \hline
 		\textbf{Fluxo Principal} & 
 		1. O operador consulta as solicitações de garantia pelo módulo de chamados. \newline
 		2. O sistema exibe a lista de acionamentos filtrados por status, cliente ou produto. \newline
 		3. O operador seleciona um chamado e visualiza seus detalhes e histórico de apontamentos. \newline
 		4. O operador seleciona a opção de alterar status. \newline
 		5. O sistema exibe as transições permitidas com base no ciclo de vida (Aberta $\rightarrow$ Em Análise $\rightarrow$ Aprovada / Negada / Concluída). \newline
-		6. O operador seleciona o novo status, insere parecer técnico ou justificativa da decisão e confirma. \newline
+		6. O operador seleciona o novo status, insere parecer técnico ou justificativa da decisão e confirma (RF15). \newline
 		7. O sistema persiste a alteração e atualiza a data/hora do apontamento. \newline
-		8. O sistema apresenta notificação de atualização realizada com sucesso. \\ \hline
+		8. O sistema executa o caso de uso incluído UC13 (Enviar Notificação via WhatsApp) em segundo plano (RF21, RNF07) e apresenta confirmação de atualização realizada com sucesso. \\ \hline
 		\textbf{Fluxos Alternativos} & 
 		\textbf{FA01 – Tentativa de Alteração em Chamado Finalizado (Passo 5):} \newline
 		1. O operador seleciona um chamado com status final (``Aprovada'', ``Negada'' ou ``Concluída''). \newline
@@ -540,6 +587,205 @@ Aqui está o detalhamento dos Casos de Usos:
 	\end{tabular}
 \end{table}
 
+\subsection{UC12 – Configurar Integração WhatsApp}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC12 – Configurar Integração WhatsApp}
+	\label{tab:uc12}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC12 - Configurar Integração WhatsApp \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF20, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado com perfil Administrador. \\ \hline
+		\textbf{Pós-condições} & Credenciais e parâmetros de integração persistidos e vinculados ao tenant da empresa. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O administrador acessa o módulo de configurações de integração com o WhatsApp. \newline
+		2. O sistema exibe o formulário solicitando URL da API, token de acesso, identificador do remetente e prazo de antecedência em dias para alerta de vencimento. \newline
+		3. O administrador preenche os parâmetros e confirma o salvamento. \newline
+		4. O sistema valida o preenchimento dos campos obrigatórios. \newline
+		5. O sistema persiste os parâmetros de forma isolada para a empresa ativa (RNF03). \newline
+		6. O sistema exibe mensagem de confirmação. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Parâmetros Inválidos ou Incompletos (Passo 4):} \newline
+		1. O sistema identifica campos obrigatórios vazios ou em formato incorreto. \newline
+		2. O sistema exibe mensagem de erro e solicita a correção dos dados informados (retorna ao passo 3). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC13 – Enviar Notificação via WhatsApp}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC13 – Enviar Notificação via WhatsApp}
+	\label{tab:uc13}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC13 - Enviar Notificação via WhatsApp \\ \hline
+		\textbf{Atores} & Sistema (incluído por UC08 e UC09 ou acionado por rotina interna de vencimento) \\ \hline
+		\textbf{Requisitos Associados} & RF13, RF21, RF22, RF23, RNF06, RNF07, RN10, RN11 \\ \hline
+		\textbf{Pré-condições} & Integração configurada na empresa; evento disparado por abertura/mudança de status de chamado ou verificação automática de prazos de vencimento. \\ \hline
+		\textbf{Pós-condições} & Notificação processada em segundo plano e enviada ao cliente final via WhatsApp. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O sistema inicia o processamento em segundo plano a partir do evento gerador (RNF07). \newline
+		2. O sistema valida a presença de número de telefone com DDD válido no cadastro do cliente (RN10). \newline
+		3. Caso seja alerta de vencimento de garantia, o sistema verifica se a notificação já foi enviada anteriormente para a mesma antecedência (RN11). \newline
+		4. O sistema monta a mensagem contendo as informações do produto, status do reparo ou aviso de vencimento e inclui o link público de rastreamento quando aplicável (RF13, RF21, RF22, RF23). \newline
+		5. O sistema envia a requisição para a API do WhatsApp utilizando as credenciais configuradas pela empresa. \newline
+		6. O sistema registra o envio concluído no histórico interno. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Telefone Ausente ou Inválido (Passo 2):} \newline
+		1. O sistema identifica que o cliente não possui telefone válido cadastrado (RN10). \newline
+		2. O sistema cancela o disparo, registra a ocorrência em log e encerra o caso de uso sem afetar a operação principal. \newline
+		\textbf{FA02 – Falha de Comunicação com a API (Passo 5):} \newline
+		1. Ocorre falha de rede ou indisponibilidade no serviço externo. \newline
+		2. O sistema registra a falha em segundo plano para nova tentativa posterior, preservando a disponibilidade da aplicação (RNF06, RNF07). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC14 – Acompanhar Solicitação de Garantia}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC14 – Acompanhar Solicitação de Garantia}
+	\label{tab:uc14}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC14 - Acompanhar Solicitação de Garantia \\ \hline
+		\textbf{Atores} & Cliente Final (usuário não autenticado) \\ \hline
+		\textbf{Requisitos Associados} & RF15, RF23, RNF04 \\ \hline
+		\textbf{Pré-condições} & Solicitação de garantia previamente aberta e link com token único gerado. \\ \hline
+		\textbf{Pós-condições} & Status atual e histórico de etapas do conserto apresentados ao cliente. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O cliente final acessa o link único de rastreamento recebido via WhatsApp (RF23). \newline
+		2. O sistema valida o token identificador presente na URL. \newline
+		3. O sistema recupera os dados do acionamento (produto, protocolo, data de abertura, status atual e histórico de etapas). \newline
+		4. O sistema exibe a página responsiva de acompanhamento para o cliente (RNF04). \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Link ou Token Inválido (Passo 2):} \newline
+		1. O sistema identifica que o token informado não corresponde a nenhuma solicitação válida. \newline
+		2. O sistema exibe mensagem informando que a solicitação não foi localizada e encerra o caso de uso. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC12 – Configurar Integração WhatsApp}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC12 – Configurar Integração WhatsApp}
+	\label{tab:uc12}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC12 - Configurar Integração WhatsApp \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Requisitos Associados} & RF20, RNF03 \\ \hline
+		\textbf{Pré-condições} & Usuário autenticado com perfil Administrador. \\ \hline
+		\textbf{Pós-condições} & Credenciais, parâmetros de webhook e regras de antecedência persistidos e vinculados ao tenant da empresa. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O administrador acessa o módulo de configurações de integração com o WhatsApp. \newline
+		2. O sistema exibe o formulário solicitando URL da API, token de acesso, identificador do remetente, chave de verificação do webhook e antecedência em dias para alerta de vencimento (RF20). \newline
+		3. O administrador preenche os parâmetros e confirma o salvamento. \newline
+		4. O sistema valida o preenchimento dos campos obrigatórios. \newline
+		5. O sistema persiste os parâmetros de forma isolada para a empresa ativa (RNF03). \newline
+		6. O sistema exibe mensagem de confirmação. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Parâmetros Inválidos ou Incompletos (Passo 4):} \newline
+		1. O sistema identifica campos obrigatórios vazios ou em formato incorreto. \newline
+		2. O sistema exibe mensagem de erro e solicita a correção dos dados informados (retorna ao passo 3). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC13 – Enviar Notificação via WhatsApp}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC13 – Enviar Notificação via WhatsApp}
+	\label{tab:uc13}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC13 - Enviar Notificação via WhatsApp \\ \hline
+		\textbf{Atores} & Sistema (incluído por UC08 e UC09 ou acionado por rotina interna de vencimento) \\ \hline
+		\textbf{Requisitos Associados} & RF13, RF21, RNF06, RNF07, RN10, RN11 \\ \hline
+		\textbf{Pré-condições} & Integração configurada na empresa; evento disparado por abertura/mudança de status de chamado ou verificação automática de prazos de vencimento. \\ \hline
+		\textbf{Pós-condições} & Notificação processada em segundo plano e enviada ao cliente final via WhatsApp. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O sistema inicia o processamento assíncrono em segundo plano a partir do evento gerador (RNF07). \newline
+		2. O sistema valida a presença de número de telefone com DDD válido no cadastro do cliente (RN10). \newline
+		3. Caso seja alerta de vencimento de garantia, o sistema verifica se a notificação já foi enviada anteriormente para a mesma antecedência (RN11). \newline
+		4. O sistema monta a mensagem contendo as informações do produto, número do protocolo e status do reparo ou aviso de vencimento (RF13, RF21). \newline
+		5. O sistema envia a requisição para a API do WhatsApp utilizando as credenciais configuradas pela empresa. \newline
+		6. O sistema registra o envio concluído no histórico interno. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Telefone Ausente ou Inválido (Passo 2):} \newline
+		1. O sistema identifica que o cliente não possui telefone válido cadastrado (RN10). \newline
+		2. O sistema cancela o disparo, registra a ocorrência em log e encerra o caso de uso sem afetar a operação principal. \newline
+		\textbf{FA02 – Falha de Comunicação com a API (Passo 5):} \newline
+		1. Ocorre falha de rede ou indisponibilidade no serviço externo. \newline
+		2. O sistema registra a falha em segundo plano para nova tentativa posterior, preservando a disponibilidade da aplicação (RNF06, RNF07). \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC14 – Interagir com Bot de Autoatendimento}
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC14 – Interagir com Bot de Autoatendimento}
+	\label{tab:uc14}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC14 - Interagir com Bot de Autoatendimento \\ \hline
+		\textbf{Atores} & Cliente Final \\ \hline
+		\textbf{Requisitos Associados} & RF15, RF22, RF24, RNF07, RNF08, RN10 \\ \hline
+		\textbf{Pré-condições} & Integração de webhook ativa na empresa; cliente enviar mensagem para o número de WhatsApp da loja. \\ \hline
+		\textbf{Pós-condições} & Consulta de status respondida, fluxo de acionamento iniciado ou solicitação de atendente humano registrada. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O cliente final envia uma mensagem inicial para o número de WhatsApp da empresa. \newline
+		2. O sistema recebe o evento via webhook (RNF07), inicia o controle de sessão da conversa (RNF08) e responde com o menu de opções: ``1 - Acionar Garantia'', ``2 - Consultar Status do Processo'' e ``3 - Falar com Atendente'' (RF22). \newline
+		3. O cliente responde com a opção ``2 - Consultar Status do Processo''. \newline
+		4. O sistema solicita o número do protocolo ou o CPF/CNPJ do cliente (RN10). \newline
+		5. O cliente envia o dado solicitado. \newline
+		6. O sistema localiza os acionamentos vinculados e recupera o status atual e o histórico da solicitação (RF15, RF24). \newline
+		7. O sistema envia a resposta formatada no WhatsApp e encerra o atendimento automatizado. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Seleção de Acionamento de Garantia (Passo 3):} \newline
+		1. O cliente seleciona a opção ``1 - Acionar Garantia''. \newline
+		2. O sistema direciona a sessão para o fluxo de abertura de chamado pelo WhatsApp (UC15). \newline
+		\textbf{FA02 – Opção Inválida ou Expiração de Sessão (Passo 3):} \newline
+		1. O cliente envia uma opção inexistente ou excede o tempo limite de resposta (RNF08). \newline
+		2. O sistema reapresenta o menu principal ou encerra a sessão por inatividade. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{UC15 – Acionar Garantia via WhatsApp}
+
+\begin{table}[H]
+	\centering
+	\caption{Especificação do Caso de Uso UC15 – Acionar Garantia via WhatsApp}
+	\label{tab:uc15}
+	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
+		\hline
+		\textbf{Nome} & UC15 - Acionar Garantia via WhatsApp \\ \hline
+		\textbf{Atores} & Cliente Final \\ \hline
+		\textbf{Requisitos Associados} & RF12, RF14, RF16, RF23, RNF07, RNF08, RN04, RN10 \\ \hline
+		\textbf{Pré-condições} & Cliente em sessão ativa no WhatsApp e possuir venda previamente registrada na empresa. \\ \hline
+		\textbf{Pós-condições} & Solicitação de garantia criada com status ``Aberta'' e número de protocolo enviado ao cliente no WhatsApp. \\ \hline
+		\textbf{Fluxo Principal} & 
+		1. O cliente final inicia a opção de acionamento de garantia pelo WhatsApp (RF23). \newline
+		2. O sistema solicita o CPF/CNPJ do cliente para identificação cadastral (RN10). \newline
+		3. O cliente informa o CPF/CNPJ no chat. \newline
+		4. O sistema localiza as vendas associadas ao cliente e filtra os itens que possuem ao menos uma garantia vigente na data atual (RF12, RN04). \newline
+		5. O sistema apresenta no chat a lista numerada de produtos elegíveis. \newline
+		6. O cliente responde com o número correspondente ao item que deseja acionar. \newline
+		7. O sistema solicita a descrição do defeito apresentado pelo produto. \newline
+		8. O cliente envia a mensagem com o relato do problema (RF14). \newline
+		9. O sistema cria a solicitação de garantia vinculada à venda com status ``Aberta'', gera o número de protocolo e envia a confirmação ao cliente pelo WhatsApp. \\ \hline
+		\textbf{Fluxos Alternativos} & 
+		\textbf{FA01 – Nenhuma Venda Localizada ou Garantias Expiradas (Passo 4):} \newline
+		1. O sistema verifica que não existem vendas para o CPF/CNPJ informado ou que todos os produtos adquiridos já estão com os prazos de garantia expirados (RF16, RN04). \newline
+		2. O sistema informa no chat a impossibilidade de abertura automática devido à ausência de garantia vigente e disponibiliza a opção de falar com um atendente, encerrando o caso de uso. \\ \hline
+	\end{tabular}
+\end{table}
+
 \section{Diagrama de Atividades}
 
 Aqui está o diagrama de atividades
@@ -547,6 +793,62 @@ Aqui está o diagrama de atividades
 \begin{figure}[H]
 	\centering
 	\caption{Diagrama de Atividades do Fluxo de Registro de Venda (UC06)}
-	\includegraphics[width=0.85\textwidth]{img/diagramaatividade.png}
+	\includegraphics[width=0.95\textwidth]{img/diagramaatividade.png}
+	\label{fig:diagrama_atividade}
+\end{figure}
+
+\section{Protótipos}
+
+Essa secção vai ter os protótipos da interfaces do Sistema
+
+\vspace{\baselineskip}
+\noindent\textbf{Dashboard}
+
+Esse painel é o Dashboard, tela inicial para a qual o usuário é redirecionado após a autenticação no sistema.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{img/Dashboard.png}
+	\caption{Tela do painel Dashboard}
+	\label{fig:diagrama_atividade}
+\end{figure}
+
+\vspace{\baselineskip}
+\noindent\textbf{Clientes}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{img/Clientes.png}
+	\caption{Tela do painel de Clientes}
+	\label{fig:diagrama_atividade}
+\end{figure}
+
+\vspace{\baselineskip}
+\noindent\textbf{Produtos}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{img/Produtos.png}
+	\caption{Tela de gerenciamento de Produtos}
+	\label{fig:diagrama_atividade}
+\end{figure}
+
+\vspace{\baselineskip}
+\noindent\textbf{Acionamentos}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{img/Acionamentos.png}
+	\caption{Tela de Acionamentos de Garantia}
+	\label{fig:diagrama_atividade}
+\end{figure}
+
+\vspace{\baselineskip}
+\noindent\textbf{Usuários}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{img/Usuários.png}
+	\caption{Tela de gerenciamento dos usuários da empresa}
 	\label{fig:diagrama_atividade}
 \end{figure}
