@@ -613,37 +613,7 @@ Aqui está o detalhamento dos Casos de Usos:
 	\end{tabular}
 \end{table}
 
-\subsection{UC13 – Enviar Notificação via WhatsApp}
-
-\begin{table}[H]
-	\centering
-	\caption{Especificação do Caso de Uso UC13 – Enviar Notificação via WhatsApp}
-	\label{tab:uc13}
-	\begin{tabular}{|p{3.5cm}|p{11.5cm}|}
-		\hline
-		\textbf{Nome} & UC13 - Enviar Notificação via WhatsApp \\ \hline
-		\textbf{Atores} & Sistema (incluído por UC08 e UC09 ou acionado por rotina interna de vencimento) \\ \hline
-		\textbf{Requisitos Associados} & RF13, RF21, RF22, RF23, RNF06, RNF07, RN10, RN11 \\ \hline
-		\textbf{Pré-condições} & Integração configurada na empresa; evento disparado por abertura/mudança de status de chamado ou verificação automática de prazos de vencimento. \\ \hline
-		\textbf{Pós-condições} & Notificação processada em segundo plano e enviada ao cliente final via WhatsApp. \\ \hline
-		\textbf{Fluxo Principal} & 
-		1. O sistema inicia o processamento em segundo plano a partir do evento gerador (RNF07). \newline
-		2. O sistema valida a presença de número de telefone com DDD válido no cadastro do cliente (RN10). \newline
-		3. Caso seja alerta de vencimento de garantia, o sistema verifica se a notificação já foi enviada anteriormente para a mesma antecedência (RN11). \newline
-		4. O sistema monta a mensagem contendo as informações do produto, status do reparo ou aviso de vencimento e inclui o link público de rastreamento quando aplicável (RF13, RF21, RF22, RF23). \newline
-		5. O sistema envia a requisição para a API do WhatsApp utilizando as credenciais configuradas pela empresa. \newline
-		6. O sistema registra o envio concluído no histórico interno. \\ \hline
-		\textbf{Fluxos Alternativos} & 
-		\textbf{FA01 – Telefone Ausente ou Inválido (Passo 2):} \newline
-		1. O sistema identifica que o cliente não possui telefone válido cadastrado (RN10). \newline
-		2. O sistema cancela o disparo, registra a ocorrência em log e encerra o caso de uso sem afetar a operação principal. \newline
-		\textbf{FA02 – Falha de Comunicação com a API (Passo 5):} \newline
-		1. Ocorre falha de rede ou indisponibilidade no serviço externo. \newline
-		2. O sistema registra a falha em segundo plano para nova tentativa posterior, preservando a disponibilidade da aplicação (RNF06, RNF07). \\ \hline
-	\end{tabular}
-\end{table}
-
-\subsection{UC14 – Acompanhar Solicitação de Garantia}
+\subsection{UC13 – Acompanhar Solicitação de Garantia}
 
 \begin{table}[H]
 	\centering
@@ -668,7 +638,7 @@ Aqui está o detalhamento dos Casos de Usos:
 	\end{tabular}
 \end{table}
 
-\subsection{UC12 – Configurar Integração WhatsApp}
+\subsection{UC14 – Configurar Integração WhatsApp}
 
 \begin{table}[H]
 	\centering
@@ -695,7 +665,7 @@ Aqui está o detalhamento dos Casos de Usos:
 	\end{tabular}
 \end{table}
 
-\subsection{UC13 – Enviar Notificação via WhatsApp}
+\subsection{UC15 – Enviar Notificação via WhatsApp}
 
 \begin{table}[H]
 	\centering
@@ -725,7 +695,7 @@ Aqui está o detalhamento dos Casos de Usos:
 	\end{tabular}
 \end{table}
 
-\subsection{UC14 – Interagir com Bot de Autoatendimento}
+\subsection{UC16 – Interagir com Bot de Autoatendimento}
 \begin{table}[H]
 	\centering
 	\caption{Especificação do Caso de Uso UC14 – Interagir com Bot de Autoatendimento}
@@ -755,7 +725,7 @@ Aqui está o detalhamento dos Casos de Usos:
 	\end{tabular}
 \end{table}
 
-\subsection{UC15 – Acionar Garantia via WhatsApp}
+\subsection{UC17 – Acionar Garantia via WhatsApp}
 
 \begin{table}[H]
 	\centering
@@ -801,7 +771,7 @@ A Figura 4.3 ilustra o diagrama de atividades correspondente ao acionamento de g
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\textwidth]{img/diagramaatividade2.png}
-	\caption{Diagrama de Atividades do Fluxo de Acionar Garantia via WhatsApp (UC15)}
+	\caption{Diagrama de Atividades do Fluxo de Acionar Garantia via WhatsApp (UC17)}
 	\label{fig:diagrama_atividade2}
 \end{figure}
 
