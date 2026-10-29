@@ -18,23 +18,24 @@
 \contentsline {subsection}{\numberline {4.3.5}UC05 – Manter Produtos}{26}{subsection.4.3.5}%
 \contentsline {subsection}{\numberline {4.3.6}UC06 – Registrar Venda}{27}{subsection.4.3.6}%
 \contentsline {subsection}{\numberline {4.3.7}UC07 – Calcular Prazos de Garantia}{28}{subsection.4.3.7}%
-\contentsline {subsection}{\numberline {4.3.8}UC08 – Abrir Solicitação de Garantia}{30}{subsection.4.3.8}%
-\contentsline {subsection}{\numberline {4.3.9}UC09 – Gerenciar Status do Acionamento}{31}{subsection.4.3.9}%
-\contentsline {subsection}{\numberline {4.3.10}UC10 – Consultar Histórico e Relatórios}{32}{subsection.4.3.10}%
-\contentsline {subsection}{\numberline {4.3.11}UC11 – Visualizar Painel Operacional}{33}{subsection.4.3.11}%
-\contentsline {subsection}{\numberline {4.3.12}UC12 – Configurar Integração WhatsApp}{34}{subsection.4.3.12}%
-\contentsline {subsection}{\numberline {4.3.13}UC13 – Enviar Notificação via WhatsApp}{35}{subsection.4.3.13}%
-\contentsline {subsection}{\numberline {4.3.14}UC14 – Acompanhar Solicitação de Garantia}{36}{subsection.4.3.14}%
-\contentsline {subsection}{\numberline {4.3.15}UC12 – Configurar Integração WhatsApp}{37}{subsection.4.3.15}%
-\contentsline {subsection}{\numberline {4.3.16}UC13 – Enviar Notificação via WhatsApp}{38}{subsection.4.3.16}%
-\contentsline {subsection}{\numberline {4.3.17}UC14 – Interagir com Bot de Autoatendimento}{39}{subsection.4.3.17}%
-\contentsline {subsection}{\numberline {4.3.18}UC15 – Acionar Garantia via WhatsApp}{40}{subsection.4.3.18}%
+\contentsline {subsection}{\numberline {4.3.8}UC08 – Abrir Solicitação de Garantia}{29}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}UC09 – Gerenciar Status do Acionamento}{30}{subsection.4.3.9}%
+\contentsline {subsection}{\numberline {4.3.10}UC10 – Consultar Histórico e Relatórios}{31}{subsection.4.3.10}%
+\contentsline {subsection}{\numberline {4.3.11}UC11 – Visualizar Painel Operacional}{32}{subsection.4.3.11}%
+\contentsline {subsection}{\numberline {4.3.12}UC12 – Configurar Integração WhatsApp}{33}{subsection.4.3.12}%
+\contentsline {subsection}{\numberline {4.3.13}UC13 – Enviar Notificação via WhatsApp}{34}{subsection.4.3.13}%
+\contentsline {subsection}{\numberline {4.3.14}UC14 – Acompanhar Solicitação de Garantia}{35}{subsection.4.3.14}%
+\contentsline {subsection}{\numberline {4.3.15}UC12 – Configurar Integração WhatsApp}{36}{subsection.4.3.15}%
+\contentsline {subsection}{\numberline {4.3.16}UC13 – Enviar Notificação via WhatsApp}{37}{subsection.4.3.16}%
+\contentsline {subsection}{\numberline {4.3.17}UC14 – Interagir com Bot de Autoatendimento}{38}{subsection.4.3.17}%
+\contentsline {subsection}{\numberline {4.3.18}UC15 – Acionar Garantia via WhatsApp}{39}{subsection.4.3.18}%
 \contentsline {section}{\numberline {4.4}Diagrama de Atividades}{40}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Protótipos}{41}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Desenvolvimento e Produto}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}O que devo escrever aqui?}{45}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusão}{47}{chapter.6}%
-\contentsline {chapter}{Referências}{48}{chapter*.33}%
-\contentsline {chapter}{Apêndice}{49}{section*.34}%
-\contentsline {chapter}{\numberline {A}Título do Apêndice}{50}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Seção I}{50}{appendix.A.1}%
+\contentsline {section}{\numberline {4.5}Diagrama de Banco de Dados}{41}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Protótipos}{43}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Desenvolvimento e Produto}{46}{chapter.5}%
+\contentsline {section}{\numberline {5.1}O que devo escrever aqui?}{46}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusão}{48}{chapter.6}%
+\contentsline {chapter}{Referências}{49}{chapter*.35}%
+\contentsline {chapter}{Apêndice}{50}{section*.36}%
+\contentsline {chapter}{\numberline {A}Título do Apêndice}{51}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Seção I}{51}{appendix.A.1}%

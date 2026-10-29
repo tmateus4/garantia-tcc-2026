@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.16)  21 OCT 2026 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.16)  29 OCT 2026 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -673,32 +673,32 @@ LaTeX Warning: Command \underbar  has changed.
 LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
-) (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count352
-\float@exts=\toks48
-\float@box=\box69
-\@float@everytoks=\toks49
-\@floatcapt=\box70
-)
-(C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+) (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2026-01-28 v4.27 Multi-page Table package (DPC)
 \LTleft=\skip93
 \LTright=\skip94
 \LTpre=\skip95
 \LTpost=\skip96
-\LTchunksize=\count353
+\LTchunksize=\count352
 \LTcapwidth=\dimen273
-\LT@head=\box71
-\LT@firsthead=\box72
-\LT@foot=\box73
-\LT@lastfoot=\box74
-\LT@gbox=\box75
-\LT@cols=\count354
-\LT@rows=\count355
-\c@LT@tables=\count356
-\c@LT@chunks=\count357
-\LT@p@ftn=\toks50
+\LT@head=\box69
+\LT@firsthead=\box70
+\LT@foot=\box71
+\LT@lastfoot=\box72
+\LT@gbox=\box73
+\LT@cols=\count353
+\LT@rows=\count354
+\c@LT@tables=\count355
+\c@LT@chunks=\count356
+\LT@p@ftn=\toks48
+)
+(C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count357
+\float@exts=\toks49
+\float@box=\box74
+\@float@everytoks=\toks50
+\@floatcapt=\box75
 )
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
 Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
@@ -880,7 +880,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip97
 )
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 14
-5.
+6.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -899,42 +899,27 @@ LaTeX Warning: Label `tab:uc13' multiply defined.
 
 LaTeX Warning: Label `tab:uc14' multiply defined.
 
-
-LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
-
-
-LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
-
-
-LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
-
-
-LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
-
-
-LaTeX Warning: Label `fig:diagrama_atividade' multiply defined.
-
 ) (text/5_Produto.aux) (text/6_Conclusao.aux) (appendix/apendice.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -999,15 +984,15 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package microtype Info: Patching varwidth to enable character protrusion.
 \MT@vwid@leftmargin=\dimen294
 \MT@vwid@rightmargin=\dimen295
-LaTeX Info: Redefining \microtypecontext on input line 145.
-Package microtype Info: Applying patch `item' on input line 145.
-Package microtype Info: Applying patch `toc' on input line 145.
+LaTeX Info: Redefining \microtypecontext on input line 146.
+Package microtype Info: Applying patch `item' on input line 146.
+Package microtype Info: Applying patch `toc' on input line 146.
 
-Package microtype Warning: Unable to apply patch `eqnum' on input line 145.
+Package microtype Warning: Unable to apply patch `eqnum' on input line 146.
 
-Package microtype Info: Applying patch `footnote' on input line 145.
-Package microtype Info: Applying patch `verbatim' on input line 145.
-LaTeX Info: Redefining \microtypesetup on input line 145.
+Package microtype Info: Applying patch `footnote' on input line 146.
+Package microtype Info: Applying patch `verbatim' on input line 146.
+LaTeX Info: Redefining \microtypesetup on input line 146.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1043,25 +1028,25 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 145.
+Package hyperref Info: Link coloring ON on input line 146.
 
 (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 Package babel Info: Main language set to 'portuguese'.
-<images/ifgvertical.png, id=159, 450.9648pt x 547.3248pt>
+<images/ifgvertical.png, id=163, 450.9648pt x 547.3248pt>
 File: images/ifgvertical.png Graphic file (type png)
 <use images/ifgvertical.png>
-Package pdftex.def Info: images/ifgvertical.png  used on input line 149.
+Package pdftex.def Info: images/ifgvertical.png  used on input line 150.
 (pdftex.def)             Requested size: 90.19136pt x 109.46301pt.
 LaTeX Font Info:    Trying to load font information for T1+times on input line 
-149.
-LaTeX Font Info:    No file T1times.fd. on input line 149.
+150.
+LaTeX Font Info:    No file T1times.fd. on input line 150.
 
 
 LaTeX Font Warning: Font shape `T1/times/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 149.
+(Font)              using `T1/cmr/m/n' instead on input line 150.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
@@ -1085,10 +1070,10 @@ t/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./images/ifgverti
 cal.png>]
 File: images/ifgvertical.png Graphic file (type png)
 <use images/ifgvertical.png>
-Package pdftex.def Info: images/ifgvertical.png  used on input line 159.
+Package pdftex.def Info: images/ifgvertical.png  used on input line 160.
 (pdftex.def)             Requested size: 90.19136pt x 109.46301pt.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 159.
+ 160.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -1098,19 +1083,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 159.
+ 160.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 159.
+ 160.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 159.
+ 160.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
@@ -1122,27 +1107,27 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-59.
+60.
 
 (C:\Users\t_mat\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.211 \begin{dedicatory}
+l.212 \begin{dedicatory}
                          [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
 
  []
 
@@ -1317,7 +1302,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [19]
-<img/diagramacasos.png, id=362, 588.2778pt x 919.2744pt>
+<img/diagramacasos.png, id=371, 588.2778pt x 919.2744pt>
 File: img/diagramacasos.png Graphic file (type png)
 <use img/diagramacasos.png>
 Package pdftex.def Info: img/diagramacasos.png  used on input line 248.
@@ -1387,6 +1372,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [27]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 478.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 478.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1403,9 +1393,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [29]
-Overfull \vbox (39.92218pt too high) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1478,6 +1465,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [38]
+<img/diagramaatividade.png, id=453, 711.1368pt x 861.4584pt>
+File: img/diagramaatividade.png Graphic file (type png)
+<use img/diagramaatividade.png>
+Package pdftex.def Info: img/diagramaatividade.png  used on input line 794.
+(pdftex.def)             Requested size: 432.48051pt x 523.89835pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.73112pt, for example:
@@ -1486,11 +1479,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
 [39]
-<img/diagramaatividade.png, id=448, 449.0376pt x 564.6696pt>
-File: img/diagramaatividade.png Graphic file (type png)
-<use img/diagramaatividade.png>
-Package pdftex.def Info: img/diagramaatividade.png  used on input line 796.
-(pdftex.def)             Requested size: 432.48051pt x 543.85158pt.
+<img/diagramaatividade2.png, id=458, 956.1321pt x 847.0044pt>
+File: img/diagramaatividade2.png Graphic file (type png)
+<use img/diagramaatividade2.png>
+Package pdftex.def Info: img/diagramaatividade2.png  used on input line 803.
+(pdftex.def)             Requested size: 455.24411pt x 403.27473pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1499,12 +1492,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[40]
-<img/Dashboard.png, id=453, 2409.0pt x 1043.9pt>
-File: img/Dashboard.png Graphic file (type png)
-<use img/Dashboard.png>
-Package pdftex.def Info: img/Dashboard.png  used on input line 811.
-(pdftex.def)             Requested size: 455.24411pt x 197.2599pt.
+[40 <./img/diagramaatividade.png>]
+<img/diagramabd.png, id=464, 941.6781pt x 811.5921pt>
+File: img/diagramabd.png Graphic file (type png)
+<use img/diagramabd.png>
+Package pdftex.def Info: img/diagramabd.png  used on input line 814.
+(pdftex.def)             Requested size: 432.48051pt x 372.74246pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1513,17 +1506,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[41 <./img/diagramaatividade.png>]
-<img/Clientes.png, id=459, 2409.0pt x 1365.1pt>
-File: img/Clientes.png Graphic file (type png)
-<use img/Clientes.png>
-Package pdftex.def Info: img/Clientes.png  used on input line 821.
-(pdftex.def)             Requested size: 455.24411pt x 257.95528pt.
-<img/Produtos.png, id=460, 2409.0pt x 1365.1pt>
-File: img/Produtos.png Graphic file (type png)
-<use img/Produtos.png>
-Package pdftex.def Info: img/Produtos.png  used on input line 831.
-(pdftex.def)             Requested size: 455.24411pt x 257.95528pt.
+[41 <./img/diagramaatividade2.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[42 <./img/diagramabd.png>]
+<img/prototipos/dashboard.png, id=476, 1204.5pt x 634.37pt>
+File: img/prototipos/dashboard.png Graphic file (type png)
+<use img/prototipos/dashboard.png>
+Package pdftex.def Info: img/prototipos/dashboard.png  used on input line 855.
+(pdftex.def)             Requested size: 455.24411pt x 239.76602pt.
+<img/prototipos/clientes.png, id=477, 1204.5pt x 714.67pt>
+File: img/prototipos/clientes.png Graphic file (type png)
+<use img/prototipos/clientes.png>
+Package pdftex.def Info: img/prototipos/clientes.png  used on input line 865.
+(pdftex.def)             Requested size: 455.24411pt x 270.11615pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1532,17 +1533,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[42 <./img/Dashboard.png> <./img/Clientes.png>]
-<img/Acionamentos.png, id=468, 2409.0pt x 1405.25pt>
-File: img/Acionamentos.png Graphic file (type png)
-<use img/Acionamentos.png>
-Package pdftex.def Info: img/Acionamentos.png  used on input line 841.
-(pdftex.def)             Requested size: 455.24411pt x 265.54219pt.
-<img/Usuários.png, id=469, 2409.0pt x 1043.9pt>
-File: img/Usuários.png Graphic file (type png)
-<use img/Usuários.png>
-Package pdftex.def Info: img/Usuários.png  used on input line 851.
-(pdftex.def)             Requested size: 455.24411pt x 197.2599pt.
+[43 <./img/prototipos/dashboard.png>]
+<img/prototipos/produtos.png, id=483, 1204.5pt x 714.67pt>
+File: img/prototipos/produtos.png Graphic file (type png)
+<use img/prototipos/produtos.png>
+Package pdftex.def Info: img/prototipos/produtos.png  used on input line 875.
+(pdftex.def)             Requested size: 455.24411pt x 270.11615pt.
+<img/prototipos/acionamentos.png, id=484, 1204.5pt x 734.745pt>
+File: img/prototipos/acionamentos.png Graphic file (type png)
+<use img/prototipos/acionamentos.png>
+Package pdftex.def Info: img/prototipos/acionamentos.png  used on input line 88
+5.
+(pdftex.def)             Requested size: 455.24411pt x 277.70367pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.73112pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.73112pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
+
+[44 <./img/prototipos/clientes.png> <./img/prototipos/produtos.png>]
+<img/prototipos/usuarios.png, id=491, 1204.5pt x 634.37pt>
+File: img/prototipos/usuarios.png Graphic file (type png)
+<use img/prototipos/usuarios.png>
+Package pdftex.def Info: img/prototipos/usuarios.png  used on input line 895.
+(pdftex.def)             Requested size: 455.24411pt x 239.76602pt.
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1551,18 +1567,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[43 <./img/Produtos.png> <./img/Acionamentos.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.73112pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.73112pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
-
-[44 <./img/Usuários.png>]
+[45 <./img/prototipos/acionamentos.png> <./img/prototipos/usuarios.png>]
 \openout2 = `text/5_Produto.aux'.
 
- (text/5_Produto.tex
+
+(text/5_Produto.tex
 Cap\'{\i }tulo 5.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1571,13 +1580,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45
+[46
 
 
 
 
 ]
-<img/scrum.PNG, id=494, 267.49937pt x 164.615pt>
+<img/scrum.PNG, id=511, 267.49937pt x 164.615pt>
 File: img/scrum.PNG Graphic file (type png)
 <use img/scrum.PNG>
 Package pdftex.def Info: img/scrum.PNG  used on input line 56.
@@ -1590,7 +1599,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.73112pt}.
 
-[46 <./img/scrum.PNG>]
+[47 <./img/scrum.PNG>]
 \openout2 = `text/6_Conclusao.aux'.
 
  (text/6_Conclusao.tex
@@ -1603,7 +1612,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47
+[48
 
 
 
@@ -1622,11 +1631,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48
+[49
 
 
 
-] [49
+] [50
 
 
 ]
@@ -1642,12 +1651,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50
+[51
 
 
 ]
 
-Package caption Warning: Unused \captionsetup[lstlisting] on input line 96.
+Package caption Warning: Unused \captionsetup[lstlisting] on input line 97.
 See the caption package documentation for explanation.
 
 
@@ -1667,16 +1676,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FE2342E7267B1DA15E97E8ED9273D2E1;7557.
+(rerunfilecheck)             Checksum: 6D41EB9C3D57ECBA92503913CE125D1B;7754.
  ) 
 Here is how much of TeX's memory you used:
- 24285 strings out of 467441
- 404241 string characters out of 5407591
- 968091 words of memory out of 5000000
- 52658 multiletter control sequences out of 15000+600000
- 702061 words of font info for 293 fonts, out of 8000000 for 9000
+ 24390 strings out of 467441
+ 406329 string characters out of 5407591
+ 967600 words of memory out of 5000000
+ 52714 multiletter control sequences out of 15000+600000
+ 710136 words of font info for 337 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,13n,85p,1438b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,13n,86p,1438b,717s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\t_mat\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
 1095.pk><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb><C:/Users/t_mat/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -1688,9 +1697,9 @@ eX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/t_mat/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (51 pages, 1452091 bytes).
+Output written on main.pdf (52 pages, 4068500 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
- 85350 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
+ 94584 words of extra memory for PDF output out of 106986 (max. 10000000)
 

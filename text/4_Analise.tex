@@ -442,7 +442,6 @@ Aqui está o detalhamento dos Casos de Usos:
 		2. O sistema bloqueia a transação e exibe alerta na tela (retorna ao passo 3). \\ \hline
 	\end{tabular}
 \end{table}
-
 \subsection{UC07 – Calcular Prazos de Garantia}
 
 \begin{table}[H]
@@ -469,10 +468,10 @@ Aqui está o detalhamento dos Casos de Usos:
 		2. O sistema define a vigência da garantia contratual com prazo zero, consolidando o encerramento do suporte no termo final da garantia legal, e o fluxo principal prossegue no passo 4. \\ \hline
 	\end{tabular}
 \end{table}
-
 \subsection{UC08 – Abrir Solicitação de Garantia}
 
 \begin{table}[H]
+	\footnotesize
 	\centering
 	\caption{Especificação do Caso de Uso UC08 – Abrir Solicitação de Garantia}
 	\label{tab:uc08}
@@ -788,14 +787,59 @@ Aqui está o detalhamento dos Casos de Usos:
 
 \section{Diagrama de Atividades}
 
-Aqui está o diagrama de atividades
+Aqui está o diagrama de atividades, os diagramas foi elaborado utilizando a ferramenta draw.io
 
 \begin{figure}[H]
 	\centering
-	\caption{Diagrama de Atividades do Fluxo de Registro de Venda (UC06)}
 	\includegraphics[width=0.95\textwidth]{img/diagramaatividade.png}
+	\caption{Diagrama de Atividades do Fluxo de Registro de Venda (UC06)}
 	\label{fig:diagrama_atividade}
 \end{figure}
+
+A Figura 4.3 ilustra o diagrama de atividades correspondente ao acionamento de garantia pelo cliente final via WhatsApp. O fluxo inicia-se com a interação do usuário no canal de autoatendimento, onde o sistema valida a vigência das garantias e registra a solicitação de forma automatizada.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{img/diagramaatividade2.png}
+	\caption{Diagrama de Atividades do Fluxo de Acionar Garantia via WhatsApp (UC15)}
+	\label{fig:diagrama_atividade2}
+\end{figure}
+
+\section{Diagrama de Banco de Dados}
+
+Essa secção vai ter o diagrama e a modelagem do Banco de Dados, o diagrama foi elaborado utilizando a ferramenta draw.io
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{img/diagramabd.png}
+	\caption{Diagrama de Banco de Dados}
+	\label{fig:diagrama_bd}
+\end{figure}
+
+\begin{itemize}
+	\item\textbf{empresas:}
+	Regista os dados cadastrais das empresas locatárias do SaaS.
+	\item\textbf{configuracoes\_whatsapp:}
+	Guarda os dados de integração e credenciais da API da Meta para cada locatário.
+	\item\textbf{usuarios:}
+	Regista os colaboradores da empresa contratante com acesso ao painel (administradores ou operadores).
+	\item\textbf{clientes:}
+	Armazena os consumidores finais das empresas (nome, CPF/CNPJ, contactos).
+	\item\textbf{produtos:}
+	Mantém o catálogo de itens comercializados, incluindo preços e prazos legais/contratuais de garantia.sa.
+	\item\textbf{vendas:}
+	Regista as transações comerciais associadas a um cliente e a uma nota fiscal.
+	\item\textbf{itens\_venda:}
+	Detalha os produtos de cada venda e calcula as datas exatas de término das garantias.
+	\item\textbf{acionamentos\_garantia:}
+	Controla os chamados de assistência técnica abertos (via painel ou bot), gerando protocolos e prazos.
+	\item\textbf{historico\_acionamentos:}
+	Regista a auditoria e a trilha de transições de status e pareceres técnicos dos chamados.
+	\item\textbf{notificacoes\_whatsapp:}
+	Controla o histórico de disparos de mensagens automáticas (alertas de vencimento e status).
+	\item\textbf{sessoes\_bot\_whatsapp:}
+	Mantém o estado temporário da conversa dos clientes no bot de autoatendimento.
+\end{itemize}
 
 \section{Protótipos}
 
@@ -808,9 +852,9 @@ Esse painel é o Dashboard, tela inicial para a qual o usuário é redirecionado
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{img/Dashboard.png}
+	\includegraphics[width=1.0\textwidth]{img/prototipos/dashboard.png}
 	\caption{Tela do painel Dashboard}
-	\label{fig:diagrama_atividade}
+	\label{fig:prototipo_dashboard}
 \end{figure}
 
 \vspace{\baselineskip}
@@ -818,9 +862,9 @@ Esse painel é o Dashboard, tela inicial para a qual o usuário é redirecionado
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{img/Clientes.png}
+	\includegraphics[width=1.0\textwidth]{img/prototipos/clientes.png}
 	\caption{Tela do painel de Clientes}
-	\label{fig:diagrama_atividade}
+	\label{fig:prototipo_clientes}
 \end{figure}
 
 \vspace{\baselineskip}
@@ -828,9 +872,9 @@ Esse painel é o Dashboard, tela inicial para a qual o usuário é redirecionado
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{img/Produtos.png}
+	\includegraphics[width=1.0\textwidth]{img/prototipos/produtos.png}
 	\caption{Tela de gerenciamento de Produtos}
-	\label{fig:diagrama_atividade}
+	\label{fig:prototipo_produtos}
 \end{figure}
 
 \vspace{\baselineskip}
@@ -838,9 +882,9 @@ Esse painel é o Dashboard, tela inicial para a qual o usuário é redirecionado
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{img/Acionamentos.png}
+	\includegraphics[width=1.0\textwidth]{img/prototipos/acionamentos.png}
 	\caption{Tela de Acionamentos de Garantia}
-	\label{fig:diagrama_atividade}
+	\label{fig:prototipo__acionamentos}
 \end{figure}
 
 \vspace{\baselineskip}
@@ -848,7 +892,7 @@ Esse painel é o Dashboard, tela inicial para a qual o usuário é redirecionado
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{img/Usuários.png}
+	\includegraphics[width=1.0\textwidth]{img/prototipos/usuarios.png}
 	\caption{Tela de gerenciamento dos usuários da empresa}
-	\label{fig:diagrama_atividade}
+	\label{fig:prototipo__usuarios}
 \end{figure}
